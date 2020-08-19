@@ -1,9 +1,16 @@
-import config from "./firebase.config"
-import firebase from "firebase/app"
+import * as firebase from "firebase/app"
 import "firebase/firestore"
+import "firebase/auth"
+import config from "./firebase.config"
 
-firebase.initializeApp(config)
-
-export default {
-  db: firebase.firestore(),
+class FirebaseService {
+  constructor(config) {
+    firebase.initializeApp(config)
+    this.auth = firebase.auth()
+    this.db = firebase.firestore()
+  }
 }
+
+const firebaseService = new FirebaseService(config)
+
+export default firebaseService

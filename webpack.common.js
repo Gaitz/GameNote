@@ -7,6 +7,13 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "docs"),
   },
+  resolve: {
+    alias: {
+      Components: path.resolve(__dirname, "src/components"),
+      Services: path.resolve(__dirname, "src/services"),
+      Hooks: path.resolve(__dirname, "src/hooks"),
+    },
+  },
   module: {
     rules: [
       {
@@ -43,7 +50,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Game Note App",
-      template: "index.html",
+      template: path.resolve(__dirname, "./public/index_template.html"),
+      icon: path.resolve(__dirname, "./public/icon.png"),
     }),
   ],
 }
