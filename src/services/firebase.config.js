@@ -1,4 +1,4 @@
-const firebaseConfig = {
+export default {
   apiKey: "AIzaSyAoasva6izH4goLY6JQEj-gcemeaKSDJaM",
   authDomain: "gamenote-1383f.firebaseapp.com",
   databaseURL: "https://gamenote-1383f.firebaseio.com",
@@ -8,5 +8,3 @@ const firebaseConfig = {
   appId: "1:185638389912:web:34944f34e40b7897f268ed",
   measurementId: "G-DQZJG0BD8Z",
 }
-
-module.exports = firebaseConfig
