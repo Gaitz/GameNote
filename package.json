@@ -1,0 +1,51 @@
+{
+  "name": "game-note",
+  "version": "1.0.0",
+  "description": "Game Note web APP",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm run check & npm run lint",
+    "build": "webpack --config webpack.prod.js",
+    "develop": "webpack-dev-server --config webpack.dev.js",
+    "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
+    "check": "prettier --check ./src/",
+    "format": "prettier --write ./src/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gaitz/Note.git"
+  },
+  "author": "PHC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gaitz/Note/issues"
+  },
+  "homepage": "https://github.com/Gaitz/Note#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-react": "^7.20.3",
+    "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
+    "prettier": "2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
+  },
+  "dependencies": {
+    "firebase": "^7.18.0"
+  }
+}
