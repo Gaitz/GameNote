@@ -7,30 +7,40 @@
     "develop": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "publish": "npm run build && git push",
-    "test": "npm run check & npm run lint",
-    "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
-    "check": "prettier --check ./src/",
-    "format": "prettier --write ./src/"
+    "pre-commit": "npm run prettier & npm run eslint & npm test",
+    "prettier": "prettier --check ./src/",
+    "eslint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
+    "format": "prettier --write ./src/",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test"
+      "pre-commit": "npm run pre-commit"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "\\.js$": [
+        "babel-jest"
+      ]
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gaitz/Note.git"
+    "url": "git+https://github.com/Gaitz/GameNote.git"
   },
   "author": "PHC",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Gaitz/Note/issues"
+    "url": "https://github.com/Gaitz/GameNote/issues"
   },
-  "homepage": "https://github.com/Gaitz/Note#readme",
+  "homepage": "https://github.com/Gaitz/GameNote#readme",
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.2.1",
     "eslint": "^7.5.0",
@@ -39,6 +49,7 @@
     "eslint-plugin-react": "^7.20.3",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
+    "jest": "^26.4.1",
     "prettier": "2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

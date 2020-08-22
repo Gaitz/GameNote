@@ -10,8 +10,10 @@ module.exports = {
   resolve: {
     alias: {
       Components: path.resolve(__dirname, "src/components"),
+      Containers: path.resolve(__dirname, "src/containers"),
       Services: path.resolve(__dirname, "src/services"),
       Hooks: path.resolve(__dirname, "src/hooks"),
+      Store: path.resolve(__dirname, "src/store"),
     },
   },
   module: {
@@ -19,17 +21,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env", "@babel/preset-react"],
-            },
-          },
-          {
-            loader: "eslint-loader",
-          },
-        ],
+        use: ["babel-loader", "eslint-loader"],
       },
       {
         test: /\.css$/,

@@ -11,3 +11,5 @@ My note system
 - React
 - Firebase
 - CSS modules
+- React hook implements Redux-like state management
+- Jest
