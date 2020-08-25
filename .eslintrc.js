@@ -22,7 +22,7 @@ module.exports = {
   plugins: ["react"],
   rules: {
     semi: ["error", "never"],
-    indent: ["error", 2],
+    indent: ["error", 2, { SwitchCase: 1 }],
   },
   settings: {
     react: {

@@ -1,13 +1,14 @@
-```javascript
+Todo
 
+- [x] `const creatStore = (rootReducer [,initialState]) => {}`
+
+```javascript
 // store is read only and only one store in an application
 const store = {
 getState: () => {}, // state should be immutable
 dispatch: (action) => {}, // store.dispatch() trigger action, action = { type, payload }
 subscribe: (listener) => {}, // implement through context API: Consumer or useContext Hook
 }
-
-const creatStore = (rootReducer [,initialState]) => {}
 
 // a pure function,
 function reducer(current_state, action) {

@@ -7,11 +7,11 @@
     "develop": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "publish": "npm run build && git push",
-    "pre-commit": "npm run prettier & npm run eslint & npm test",
     "prettier": "prettier --check ./src/",
     "eslint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
     "format": "prettier --write ./src/",
-    "test": "jest"
+    "test": "jest",
+    "pre-commit": "npm run prettier && npm run eslint && npm test"
   },
   "husky": {
     "hooks": {
