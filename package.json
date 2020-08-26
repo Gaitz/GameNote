@@ -24,6 +24,9 @@
       "\\.js$": [
         "babel-jest"
       ]
+    },
+    "moduleNameMapper": {
+      "^@hooks": "<rootDir>/src/hooks"
     }
   },
   "repository": {

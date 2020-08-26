@@ -9,11 +9,11 @@ module.exports = {
   },
   resolve: {
     alias: {
-      Components: path.resolve(__dirname, "src/components"),
-      Containers: path.resolve(__dirname, "src/containers"),
-      Services: path.resolve(__dirname, "src/services"),
-      Hooks: path.resolve(__dirname, "src/hooks"),
-      Store: path.resolve(__dirname, "src/store"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@containers": path.resolve(__dirname, "src/containers"),
+      "@services": path.resolve(__dirname, "src/services"),
+      "@hooks": path.resolve(__dirname, "src/hooks"),
+      "@store": path.resolve(__dirname, "src/store"),
     },
   },
   module: {

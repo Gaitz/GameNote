@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     semi: ["error", "never"],
     indent: ["error", 2, { SwitchCase: 1 }],
+    "react/prop-types": [0],
   },
   settings: {
     react: {

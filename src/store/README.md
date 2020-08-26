@@ -1,6 +1,12 @@
 Todo
 
-- [x] `const creatStore = (rootReducer [,initialState]) => {}`
+- [x] `const createStore = (rootReducer [,initialState]) => {}` Redux version
+- [x] Hooks version, Same Redux files using Hooks to implement
+  - useState()
+  - `value useContext(contextObject)`, return value of the context, 仍然需要掛 Provider element, 更新資料會觸發 re-render, 需要通過 `memo` 做效能最佳化
+  - `React.createContext(defaultValue)`, return context object, { Provider, Consumer }
+  - `const [state, dispatch] = useReducer(reducer, initialArg, init)`,
+- [ ] follow [ducks pattern](https://github.com/erikras/ducks-modular-redux)
 
 ```javascript
 // store is read only and only one store in an application
