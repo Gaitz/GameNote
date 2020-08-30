@@ -1,8 +1,8 @@
 import React, { useReducer } from "react"
 
-const storeContext = React.createContext()
+export const storeContext = React.createContext()
 
-function useCreateStore(rootReducer, initialState = {}) {
+export function useCreateStore(rootReducer, initialState = {}) {
   const initial = {
     ...rootReducer(undefined, { type: undefined }),
     ...initialState,
@@ -26,5 +26,3 @@ function useCreateStore(rootReducer, initialState = {}) {
 
   return Store
 }
-
-export { useCreateStore, storeContext }

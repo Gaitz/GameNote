@@ -1,4 +1,5 @@
+import React from "react"
 import ReactDOM from "react-dom"
-import App from "Containers/App"
+import { App } from "@game-note/ducks/App"
 
-ReactDOM.render(App(), document.getElementById("root"))
+ReactDOM.render(<App />, document.getElementById("root"))

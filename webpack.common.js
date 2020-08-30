@@ -9,11 +9,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "@components": path.resolve(__dirname, "src/components"),
-      "@containers": path.resolve(__dirname, "src/containers"),
-      "@services": path.resolve(__dirname, "src/services"),
-      "@hooks": path.resolve(__dirname, "src/hooks"),
-      "@store": path.resolve(__dirname, "src/store"),
+      "@game-note/ducks": path.resolve(__dirname, "src/ducks"),
+      "@game-note/services": path.resolve(__dirname, "src/services"),
+      "@game-note/hooks": path.resolve(__dirname, "src/hooks"),
     },
   },
   module: {

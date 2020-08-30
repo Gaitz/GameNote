@@ -17,12 +17,9 @@ describe("using Hook state management", () => {
     container = null
   })
 
-  test("hello jest", (done) => {
+  test("hello jest", () => {
     act(() => {
       render(<Login />, container)
-      setTimeout(() => {
-        done()
-      }, 10)
     })
   })
 })
