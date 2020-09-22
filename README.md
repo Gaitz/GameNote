@@ -11,5 +11,10 @@ My note system
 - React
 - Firebase
 - CSS modules
-- Redux / Redux Toolkit
+- Redux / React Redux / Redux Toolkit
 - Jest
+
+##
+
+TODO: setup React Router,
+TODO: Main Screen, detect firebase authentication, and setup login progress.
