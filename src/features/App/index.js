@@ -1,3 +1,5 @@
-export * from "./useCreateStore"
-export * from "./App"
-export * from "./rootReducer"
+import React from "react"
+
+export default function App() {
+  return <h1>Hello App</h1>
+}
