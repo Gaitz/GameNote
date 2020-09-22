@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import React from "react"
 
 export const storeContext = React.createContext()
 
@@ -8,7 +8,15 @@ export function useCreateStore(rootReducer, initialState = {}) {
     ...initialState,
   }
 
-  const [state, dispatch] = useReducer(rootReducer, initial)
+  // TODO: Spike useReducer source code, about setState()
+  // TODO: Learn Redux
+
+  // create own reducer pattern, disparate setState render and data store
+  // const [state, dispatch] = useReducer(rootReducer, initial)
+  let state = initial
+  const dispatch = (action) => {
+    state = rootReducer(action)
+  }
 
   const store = {
     /* state is read only */
