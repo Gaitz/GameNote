@@ -14,7 +14,6 @@ My note system
 - Redux / React Redux / Redux Toolkit
 - Jest
 
-##
+## Todos
 
-TODO: setup React Router,
 TODO: Main Screen, detect firebase authentication, and setup login progress.
