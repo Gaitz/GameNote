@@ -16,4 +16,11 @@ My note system
 
 ## Todos
 
-TODO: Main Screen, detect firebase authentication, and setup login progress.
+Main Screen, detect firebase authentication, and setup login progress.
+
+- basic login, sign out
+
+TODO: add testing
+TODO: refactor code structure
+TODO: error handling and input validation
+TODO: add [google reCAPTCHA](https://support.google.com/recaptcha/?hl=en), I'm not a robot

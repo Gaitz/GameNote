@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  text-align: center;
+  overflow: hidden;
+}
+
+main {
+  background-color: #e2f6d0;
+  min-width: 100vw;
+  min-height: 100vh;
+  box-sizing: content-box;
+}

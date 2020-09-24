@@ -9,10 +9,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "game-note/features": path.resolve(__dirname, "src/features"),
-      "game-note/services": path.resolve(__dirname, "src/services"),
-      "game-note/hooks": path.resolve(__dirname, "src/hooks"),
-      "game-note/store": path.resolve(__dirname, "src/store"),
+      "game-note": path.resolve(__dirname, "src/"),
     },
   },
   module: {
