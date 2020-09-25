@@ -1,14 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit"
+import authenticationReducer from "game-note/features/authentication/authenticationSlice"
 
 const store = configureStore({
-  reducer: function rootReducer(state = { value: 0 }, action) {
-    switch (action.type) {
-      case "ADD":
-        return { ...state, value: state.value + 1 }
-      default:
-        return state
-    }
-  },
+  reducer: { authentication: authenticationReducer },
 })
 
 export default store

@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import firebaseService from "game-note/services/firebaseService"
-import styles from "./GameNoteAuthentication.style.css"
+import Login from "./Login"
+import Logout from "./Logout"
+import { login, logout } from "./authenticationSlice"
+import { useDispatch, useSelector } from "react-redux"
 
 export default function GameNoteAuthentication() {
-  const [userInfo, setUserInfo] = useState(null)
-  const [loginData, setLoginData] = useState({ email: null, password: null })
+  const dispatch = useDispatch()
+  const userInfo = useSelector((state) => state.authentication.user)
 
-  useEffect(() => {
-    const unsubscribe = firebaseService.auth.onAuthStateChanged(function (
-      user
-    ) {
+  React.useEffect(() => {
+    const unsubscribe = firebaseService.auth.onAuthStateChanged((user) => {
       if (user) {
-        setUserInfo(user)
+        dispatch(login(user))
       } else {
-        setUserInfo(null)
+        dispatch(logout())
       }
     })
 
@@ -25,52 +26,8 @@ export default function GameNoteAuthentication() {
   }, [])
 
   if (userInfo) {
-    return (
-      <article>
-        <p>Welcome: {userInfo.email}</p>
-        <button onClick={() => firebaseService.auth.signOut()}>Sign Out</button>
-      </article>
-    )
+    return <Logout />
   } else {
-    return (
-      <article className={styles.loginComponent}>
-        <form>
-          <div>
-            <label htmlFor="account">Account:</label>
-            <input
-              id="gameNoteAccount"
-              type="email"
-              autoComplete="username"
-              onChange={(event) =>
-                setLoginData({ ...loginData, email: event.target.value })
-              }
-            ></input>
-          </div>
-          <div>
-            <label htmlFor="password">Password:</label>
-            <input
-              id="gameNotePassword"
-              type="password"
-              autoComplete="current-password"
-              onChange={(event) =>
-                setLoginData({ ...loginData, password: event.target.value })
-              }
-            ></input>
-          </div>
-          <button
-            onClick={(event) => {
-              event.preventDefault()
-              firebaseService.auth
-                .signInWithEmailAndPassword(loginData.email, loginData.password)
-                .catch((error) => {
-                  console.error(error)
-                })
-            }}
-          >
-            Login
-          </button>
-        </form>
-      </article>
-    )
+    return <Login />
   }
 }

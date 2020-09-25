@@ -1,0 +1,53 @@
+.loginComponent {
+  background-color: #fffdfa;
+  margin: 0 auto;
+  width: 20rem;
+  padding: 1rem 0;
+  border-radius: 8px;
+  border-color: #b3daff;
+  border-style: solid;
+  position: relative;
+}
+
+.loginComponent form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputBlock label {
+  margin-bottom: 0.1rem;
+}
+
+.inputBlock input {
+  margin-bottom: 0.5rem;
+}
+
+.passwordLabelBlock {
+  display: flex;
+  width: 100%;
+  margin-bottom: 0.1rem;
+}
+
+.toggleVisibleButton {
+  margin-left: auto;
+  border-radius: 3px;
+  border-color: #000000;
+  border-width: 0.02rem;
+  padding: 0 0.2rem;
+  font-size: smaller;
+  align-self: flex-end;
+  border-style: solid;
+}
+
+.errorMessageBlock {
+  position: absolute;
+  bottom: 0;
+  color: red;
+}

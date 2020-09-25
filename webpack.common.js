@@ -37,7 +37,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Game Note App",
+      title: "Game Note",
       template: path.resolve(__dirname, "./public/index_template.html"),
       icon: path.resolve(__dirname, "./public/icon.png"),
     }),
