@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import firebaseService from "game-note/services/firebaseService"
+//import { logout } from "./authenticationSlice"
 
 export default function Logout() {
   const userInfo = useSelector((state) => state.authentication.user)
@@ -8,7 +8,15 @@ export default function Logout() {
   return (
     <article>
       <p>Welcome: {userInfo?.email}</p>
-      <button onClick={() => firebaseService.auth.signOut()}>Sign Out</button>
+      {/* <button
+        onClick={() =>
+          firebaseService.auth.signOut().then(() => {
+            //          dispatch(logout())
+          })
+        }
+      >
+        Sign Out
+      </button> */}
     </article>
   )
 }

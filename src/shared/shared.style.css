@@ -1,3 +1,9 @@
+:root {
+  --main-background-color: #e2f6d0;
+  --block-background-color: #fffdfa;
+  --block-border-color: #b3daff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +15,14 @@ article {
 }
 
 main {
-  background-color: #e2f6d0;
+  background-color: var(--main-background-color);
   min-width: 100vw;
   min-height: 100vh;
   box-sizing: content-box;
+}
+
+h1 {
+  margin: 0;
+  padding: 22vh 0 5vh 0;
+  text-align: center;
 }

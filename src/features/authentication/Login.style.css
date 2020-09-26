@@ -1,10 +1,10 @@
 .loginComponent {
-  background-color: #fffdfa;
+  background-color: var(--block-background-color);
   margin: 0 auto;
   width: 20rem;
   padding: 1rem 0;
   border-radius: 8px;
-  border-color: #b3daff;
+  border-color: var(--block-border-color);
   border-style: solid;
   position: relative;
 }
@@ -35,7 +35,11 @@
   margin-bottom: 0.1rem;
 }
 
+.loginButton {
+}
+
 .toggleVisibleButton {
+  cursor: pointer;
   margin-left: auto;
   border-radius: 3px;
   border-color: #000000;
@@ -50,4 +54,10 @@
   position: absolute;
   bottom: 0;
   color: red;
+}
+
+@media (max-width: 415px) {
+  .loginComponent {
+    width: auto;
+  }
 }

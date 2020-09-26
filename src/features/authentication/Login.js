@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./Login.style.css"
-import firebaseService from "game-note/services/firebaseService"
+import { useDispatch } from "react-redux"
+import { login } from "./authenticationSlice"
 
 export default function Login() {
   const [formState, setFormState] = React.useState({
@@ -13,76 +14,73 @@ export default function Login() {
     password: null,
   })
 
+  const dispatch = useDispatch()
+
   return (
-    <article className={styles.loginComponent}>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault()
-          if (formState.errorMessage) {
-            event.target.reset()
-            return
-          }
-          if (loginData.email && loginData.password) {
-            firebaseService.auth
-              .signInWithEmailAndPassword(loginData.email, loginData.password)
-              .catch((error) => {
-                console.error(error)
-                setFormState({ ...formState, errorMessage: error.message })
-              })
-          }
-        }}
-        onReset={() => {
-          setFormState({ ...formState, errorMessage: null })
-        }}
-      >
-        <div className={styles.inputBlock}>
-          <label htmlFor="email">Email:</label>
-          <input
-            autoFocus
-            id="email"
-            name="email"
-            type="email"
-            required
-            autoComplete="username"
-            onChange={(event) =>
-              setLoginData({ ...loginData, email: event.target.value })
+    <>
+      <h1>Welcome Game Note</h1>
+      <article className={styles.loginComponent}>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault()
+            if (formState.errorMessage) {
+              event.target.reset()
+              return
             }
-          ></input>
-        </div>
-        <div className={styles.inputBlock}>
-          <div className={styles.passwordLabelBlock}>
-            <label htmlFor="password">Password:</label>
-            <span
-              className={styles.toggleVisibleButton}
-              onClick={(event) => {
-                event.preventDefault()
-                setFormState({
-                  ...formState,
-                  isPasswordVisible: !formState.isPasswordVisible,
-                })
-              }}
-            >
-              toggle visible
-            </span>
+            dispatch(login(loginData))
+          }}
+        >
+          <div className={styles.inputBlock}>
+            <label htmlFor="email">Email:</label>
+            <input
+              autoFocus
+              id="email"
+              name="email"
+              type="email"
+              required
+              disabled={formState.errorMessage ? true : false}
+              autoComplete="username"
+              onChange={(event) =>
+                setLoginData({ ...loginData, email: event.target.value })
+              }
+            ></input>
           </div>
-          <input
-            id="password"
-            name="password"
-            type={formState.isPasswordVisible ? "text" : "password"}
-            required
-            autoComplete="current-password"
-            onChange={(event) =>
-              setLoginData({ ...loginData, password: event.target.value })
-            }
-          ></input>
-        </div>
-        <button type="submit">Login</button>
-        {formState.errorMessage ? (
-          <button type="reset" className={styles.errorMessageBlock}>
-            {formState.errorMessage}
+          <div className={styles.inputBlock}>
+            <div className={styles.passwordLabelBlock}>
+              <label htmlFor="password">Password:</label>
+              <span
+                className={styles.toggleVisibleButton}
+                onClick={(event) => {
+                  event.preventDefault()
+                  setFormState({
+                    ...formState,
+                    isPasswordVisible: !formState.isPasswordVisible,
+                  })
+                }}
+              >
+                toggle visible
+              </span>
+            </div>
+            <input
+              id="password"
+              name="password"
+              type={formState.isPasswordVisible ? "text" : "password"}
+              required
+              disabled={formState.errorMessage ? true : false}
+              autoComplete="current-password"
+              onChange={(event) =>
+                setLoginData({ ...loginData, password: event.target.value })
+              }
+            ></input>
+          </div>
+          <button className={styles.loginButton} type="submit">
+            Login
           </button>
-        ) : null}
-      </form>
-    </article>
+          {formState.errorMessage ? (
+            <p className={styles.errorMessageBlock}>{formState.errorMessage}</p>
+          ) : null}
+        </form>
+      </article>
+    </>
   )
 }
