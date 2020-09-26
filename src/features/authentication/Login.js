@@ -1,12 +1,11 @@
 import React from "react"
 import styles from "./Login.style.css"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { login } from "./authenticationSlice"
 
 export default function Login() {
   const [formState, setFormState] = React.useState({
     isPasswordVisible: false,
-    errorMessage: null,
   })
 
   const [loginData, setLoginData] = React.useState({
@@ -14,6 +13,8 @@ export default function Login() {
     password: null,
   })
 
+  const loginError = useSelector((state) => state.authentication.error)
+  const isPending = useSelector((state) => state.authentication.isPending)
   const dispatch = useDispatch()
 
   return (
@@ -23,10 +24,6 @@ export default function Login() {
         <form
           onSubmit={(event) => {
             event.preventDefault()
-            if (formState.errorMessage) {
-              event.target.reset()
-              return
-            }
             dispatch(login(loginData))
           }}
         >
@@ -38,7 +35,7 @@ export default function Login() {
               name="email"
               type="email"
               required
-              disabled={formState.errorMessage ? true : false}
+              disabled={isPending}
               autoComplete="username"
               onChange={(event) =>
                 setLoginData({ ...loginData, email: event.target.value })
@@ -66,18 +63,22 @@ export default function Login() {
               name="password"
               type={formState.isPasswordVisible ? "text" : "password"}
               required
-              disabled={formState.errorMessage ? true : false}
+              disabled={isPending}
               autoComplete="current-password"
               onChange={(event) =>
                 setLoginData({ ...loginData, password: event.target.value })
               }
             ></input>
           </div>
-          <button className={styles.loginButton} type="submit">
+          <button
+            className={styles.loginButton}
+            type="submit"
+            disabled={isPending}
+          >
             Login
           </button>
-          {formState.errorMessage ? (
-            <p className={styles.errorMessageBlock}>{formState.errorMessage}</p>
+          {loginError ? (
+            <p className={styles.errorMessageBlock}>{loginError.message}</p>
           ) : null}
         </form>
       </article>

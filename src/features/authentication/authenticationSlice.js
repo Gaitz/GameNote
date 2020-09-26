@@ -15,12 +15,22 @@ const authenticationSlice = createSlice({
   name: "authentication",
   initialState: {
     user: null,
+    error: null,
+    isPending: false,
   },
   reducers: {},
   extraReducers: {
+    [login.pending]: (state) => {
+      state.isPending = true
+    },
     [login.fulfilled]: (state, action) => {
-      console.log(action)
       state.user = { email: action.payload.email }
+      state.isPending = false
+    },
+    [login.rejected]: (state, action) => {
+      const { code, message } = action.error
+      state.error = { code, message }
+      state.isPending = false
     },
   },
 })

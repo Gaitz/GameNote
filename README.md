@@ -18,9 +18,13 @@ My note system
 
 Main Screen, detect firebase authentication, and setup login progress.
 
-- login, sign out
+- Authentication login, sign out
+
   - follow https://web.dev/sign-in-form-best-practices/
-    TODO: firebase login to Redux async action
-    TODO: improve sign-in progress
+  - Todos
     TODO: add testing
     TODO: add [google reCAPTCHA](https://support.google.com/recaptcha/?hl=en), I'm not a robot
+
+- Main page
+  - Todos
+    TODO:

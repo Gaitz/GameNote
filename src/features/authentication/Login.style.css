@@ -6,7 +6,6 @@
   border-radius: 8px;
   border-color: var(--block-border-color);
   border-style: solid;
-  position: relative;
 }
 
 .loginComponent form {
@@ -52,8 +51,28 @@
 
 .errorMessageBlock {
   position: absolute;
-  bottom: 0;
+  bottom: 36vh;
+  width: 33vw;
   color: red;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.errorMessageBlock::before {
+  --triangle-width: 12px;
+  position: absolute;
+  top: calc(var(--triangle-width) * -1 - 1px);
+  border-top-width: 0px;
+  border-left-width: var(--triangle-width);
+  border-right-width: var(--triangle-width);
+  border-bottom-width: var(--triangle-width);
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: black;
+  content: "";
 }
 
 @media (max-width: 415px) {
