@@ -39,7 +39,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Game Note",
       template: path.resolve(__dirname, "./public/index_template.html"),
-      icon: path.resolve(__dirname, "./public/icon.png"),
+      icon: "/Gaitz/GameNote/blob/master/public/icon.png",
     }),
   ],
 }
