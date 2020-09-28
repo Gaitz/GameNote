@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main component snapshot testing 1`] = `
+<article>
+  <h1>
+    Game Note
+  </h1>
+  <p>
+    Welcome: 
+    test@gmail.com
+  </p>
+</article>
+`;
