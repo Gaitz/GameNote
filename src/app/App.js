@@ -20,10 +20,10 @@ export default function App() {
 
   return (
     <Router>
-      {isLogin ? <Redirect to="/" /> : <Redirect to="/login" />}
+      {isLogin ? <Redirect to="/gamenote" /> : <Redirect to="/login" />}
 
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/gamenote">
           <Main />
         </Route>
         <Route path="/login">

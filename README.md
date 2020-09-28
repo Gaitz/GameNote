@@ -22,8 +22,9 @@ Main Screen, detect firebase authentication, and setup login progress.
 
   - follow https://web.dev/sign-in-form-best-practices/
   - Todos
-    TODO: toggle password icon,
     TODO: add testing,
+    TODO: toggle password icon,
+    TODO: fix mobile style
     TODO: add [google reCAPTCHA](https://support.google.com/recaptcha/?hl=en), I'm not a robot
 
 - Main page
