@@ -33,13 +33,20 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Game Note",
       template: path.resolve(__dirname, "./public/index_template.html"),
-      icon: "/Gaitz/GameNote/blob/master/public/icon.png",
     }),
   ],
 }
