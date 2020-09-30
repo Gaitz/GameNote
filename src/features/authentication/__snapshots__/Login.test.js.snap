@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test password toggle visible 1`] = `
+<div>
+  <h1>
+    Welcome Game Note
+  </h1>
+  <article
+    class="loginComponent"
+  >
+    <form>
+      <div
+        class="inputBlock"
+      >
+        <label
+          for="email"
+        >
+          Email:
+        </label>
+        <input
+          autocomplete="username"
+          id="email"
+          name="email"
+          required=""
+          type="email"
+        />
+      </div>
+      <div
+        class="inputBlock"
+      >
+        <div
+          class="passwordLabelBlock"
+        >
+          <label
+            for="password"
+          >
+            Password:
+          </label>
+          <span
+            class="toggleVisibleButton"
+          >
+            toggle visible
+          </span>
+        </div>
+        <input
+          autocomplete="current-password"
+          id="password"
+          name="password"
+          required=""
+          type="password"
+        />
+      </div>
+      <button
+        class="loginButton"
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </article>
+</div>
+`;

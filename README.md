@@ -12,7 +12,7 @@ My note system
 - Firebase
 - CSS modules
 - Redux / React Redux / Redux Toolkit
-- Jest / React Testing Library / Redux mock store
+- Jest / React Testing Library / Testing Library jest-dom / Redux mock store
 
 ## Todos
 

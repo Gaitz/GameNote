@@ -3,7 +3,9 @@
 exports[`main component snapshot testing 1`] = `
 <div>
   <article>
-    <h1>
+    <h1
+      class="h1"
+    >
       Game Note
     </h1>
     <p>

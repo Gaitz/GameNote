@@ -11,11 +11,11 @@ test.only("main component snapshot testing", () => {
     authentication: { user: { email: "test@gmail.com" } },
   })
 
-  const component = render(
+  const { container } = render(
     <Provider store={store}>
       <Main />
     </Provider>
   )
-  let tree = component.container
-  expect(tree).toMatchSnapshot()
+
+  expect(container).toMatchSnapshot()
 })
