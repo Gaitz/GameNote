@@ -12,47 +12,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 0.5rem;
 }
 
 .inputBlock {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 0.4rem;
 }
 
 .inputBlock label {
   margin-bottom: 0.1rem;
 }
 
-.inputBlock input {
-  margin-bottom: 0.5rem;
-}
-
-.passwordLabelBlock {
+.passwordInputBlock {
   display: flex;
   width: 100%;
   margin-bottom: 0.1rem;
+  position: relative;
+  align-items: center;
 }
 
 .loginButton {
+  align-self: center;
 }
 
 .toggleVisibleButton {
   cursor: pointer;
-  margin-left: auto;
-  border-radius: 3px;
-  border-color: #000000;
-  border-width: 0.02rem;
-  padding: 0 0.2rem;
-  font-size: smaller;
-  align-self: flex-end;
-  border-style: solid;
+  position: absolute;
+  right: 0;
+  height: 1em;
 }
 
 .errorMessageBlock {
-  position: absolute;
-  bottom: 36vh;
-  width: 33vw;
+  margin-top: 0.5em;
   color: red;
   border-width: 1px;
   border-style: solid;
@@ -61,22 +55,30 @@
   border-radius: 2px;
 }
 
-.errorMessageBlock::before {
-  --triangle-width: 12px;
-  position: absolute;
-  top: calc(var(--triangle-width) * -1 - 1px);
-  border-top-width: 0px;
-  border-left-width: var(--triangle-width);
-  border-right-width: var(--triangle-width);
-  border-bottom-width: var(--triangle-width);
-  border-style: solid;
-  border-color: transparent;
-  border-bottom-color: black;
-  content: "";
-}
+/* mobile style */
+@media (max-width: 465px) {
+  h1 {
+    padding: 10vh 0 3vh 0;
+  }
 
-@media (max-width: 415px) {
   .loginComponent {
+    max-width: 100vw;
     width: auto;
+    box-sizing: content-box;
+    margin: 0;
+  }
+
+  .loginComponent form {
+    align-items: flex-start;
+    box-sizing: content-box;
+  }
+
+  .loginComponent input {
+    width: 99%;
+    box-sizing: content-box;
+  }
+
+  .inputBlock {
+    width: 100%;
   }
 }

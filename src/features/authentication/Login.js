@@ -2,6 +2,7 @@ import React from "react"
 import styles from "./Login.style.css"
 import { useDispatch, useSelector } from "react-redux"
 import { login } from "./authenticationSlice"
+import EyeIcon from "game-note/shared/images/Simple-Eye-Line-Art.svg"
 
 export default function Login() {
   const [formState, setFormState] = React.useState({
@@ -19,7 +20,7 @@ export default function Login() {
 
   return (
     <>
-      <h1>Welcome Game Note</h1>
+      <h1>Game Note</h1>
       <article className={styles.loginComponent}>
         <form
           onSubmit={(event) => {
@@ -43,9 +44,23 @@ export default function Login() {
             ></input>
           </div>
           <div className={styles.inputBlock}>
-            <div className={styles.passwordLabelBlock}>
-              <label htmlFor="password">Password:</label>
-              <span
+            <label htmlFor="password">Password:</label>
+            <div className={styles.passwordInputBlock}>
+              <input
+                id="password"
+                name="password"
+                type={formState.isPasswordVisible ? "text" : "password"}
+                required
+                disabled={isPending}
+                autoComplete="current-password"
+                onChange={(event) =>
+                  setLoginData({ ...loginData, password: event.target.value })
+                }
+              ></input>
+              <img
+                data-testid="toggleVisible"
+                src={EyeIcon}
+                alt="Click to toggle password visible"
                 className={styles.toggleVisibleButton}
                 onClick={(event) => {
                   event.preventDefault()
@@ -54,21 +69,8 @@ export default function Login() {
                     isPasswordVisible: !formState.isPasswordVisible,
                   })
                 }}
-              >
-                toggle visible
-              </span>
+              />
             </div>
-            <input
-              id="password"
-              name="password"
-              type={formState.isPasswordVisible ? "text" : "password"}
-              required
-              disabled={isPending}
-              autoComplete="current-password"
-              onChange={(event) =>
-                setLoginData({ ...loginData, password: event.target.value })
-              }
-            ></input>
           </div>
           <button
             className={styles.loginButton}

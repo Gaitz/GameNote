@@ -16,7 +16,7 @@ test("test password toggle visible", () => {
     },
   }
   const store = mockStore(initialState)
-  const { container, getByText, getByLabelText } = render(
+  const { container, getByTestId, getByLabelText } = render(
     <Provider store={store}>
       <Login />
     </Provider>
@@ -24,7 +24,7 @@ test("test password toggle visible", () => {
   expect(container).toMatchSnapshot()
 
   // test
-  const toggleVisibleButton = getByText("toggle visible")
+  const toggleVisibleButton = getByTestId("toggleVisible")
   expect(toggleVisibleButton).toBeTruthy()
   fireEvent.click(toggleVisibleButton)
 

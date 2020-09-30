@@ -3,7 +3,7 @@
 exports[`test password toggle visible 1`] = `
 <div>
   <h1>
-    Welcome Game Note
+    Game Note
   </h1>
   <article
     class="loginComponent"
@@ -28,27 +28,28 @@ exports[`test password toggle visible 1`] = `
       <div
         class="inputBlock"
       >
-        <div
-          class="passwordLabelBlock"
+        <label
+          for="password"
         >
-          <label
-            for="password"
-          >
-            Password:
-          </label>
-          <span
+          Password:
+        </label>
+        <div
+          class="passwordInputBlock"
+        >
+          <input
+            autocomplete="current-password"
+            id="password"
+            name="password"
+            required=""
+            type="password"
+          />
+          <img
+            alt="Click to toggle password visible"
             class="toggleVisibleButton"
-          >
-            toggle visible
-          </span>
+            data-testid="toggleVisible"
+            src="[object Object]"
+          />
         </div>
-        <input
-          autocomplete="current-password"
-          id="password"
-          name="password"
-          required=""
-          type="password"
-        />
       </div>
       <button
         class="loginButton"
