@@ -1,14 +1,21 @@
 import React from "react"
+import { Provider } from "react-redux"
 import { render } from "@testing-library/react"
+import configureStore from "redux-mock-store"
 import Main from "./Main"
 
-jest.mock("react-redux", () => ({
-  ...jest.requireActual("react-redux"),
-  useSelector: jest.fn().mockReturnValue({ email: "test@gmail.com" }),
-}))
+const mockStore = configureStore()
 
-test("main component snapshot testing", () => {
-  const component = render(<Main></Main>)
+test.only("main component snapshot testing", () => {
+  const store = mockStore({
+    authentication: { user: { email: "test@gmail.com" } },
+  })
+
+  const component = render(
+    <Provider store={store}>
+      <Main />
+    </Provider>
+  )
   let tree = component.container
   expect(tree).toMatchSnapshot()
 })
