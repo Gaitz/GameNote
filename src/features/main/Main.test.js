@@ -1,5 +1,5 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import { render } from "@testing-library/react"
 import Main from "./Main"
 
 jest.mock("react-redux", () => ({
@@ -8,7 +8,7 @@ jest.mock("react-redux", () => ({
 }))
 
 test("main component snapshot testing", () => {
-  const component = renderer.create(<Main></Main>)
-  let tree = component.toJSON()
+  const component = render(<Main></Main>)
+  let tree = component.container
   expect(tree).toMatchSnapshot()
 })

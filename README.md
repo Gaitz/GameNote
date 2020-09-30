@@ -12,7 +12,7 @@ My note system
 - Firebase
 - CSS modules
 - Redux / React Redux / Redux Toolkit
-- Jest
+- Jest / React Testing Library / Redux mock store
 
 ## Todos
 
@@ -22,7 +22,6 @@ Main Screen, detect firebase authentication, and setup login progress.
 
   - follow https://web.dev/sign-in-form-best-practices/
   - Todos
-    TODO: add testing,
     TODO: toggle password icon,
     TODO: fix mobile style
     TODO: add [google reCAPTCHA](https://support.google.com/recaptcha/?hl=en), I'm not a robot
