@@ -19,11 +19,11 @@ export default function App() {
   const isLogin = useSelector((state) => state.authentication.user)
 
   return (
-    <Router>
-      {isLogin ? <Redirect to="/gamenote" /> : <Redirect to="/login" />}
+    <Router basename="/GameNote/">
+      {isLogin ? <Redirect to="/" /> : <Redirect to="/login" />}
 
       <Switch>
-        <Route exact path="/gamenote">
+        <Route exact path="/">
           <Main />
         </Route>
         <Route path="/login">
