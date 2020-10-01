@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
+    filename: "[hash].bundle.js",
     path: path.resolve(__dirname, "docs"),
     publicPath: "/GameNote/",
   },
