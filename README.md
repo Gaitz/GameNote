@@ -18,6 +18,8 @@ My note system
 
 Main Screen, detect firebase authentication, and setup login progress.
 
+TODO: setup Google Analytics (GA)
+
 - Authentication login, sign out
 
   - follow https://web.dev/sign-in-form-best-practices/
