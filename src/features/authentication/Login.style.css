@@ -2,7 +2,7 @@
   background-color: var(--block-background-color);
   margin: 0 auto;
   width: 20rem;
-  padding: 1rem 0;
+  padding: 1rem;
   border-radius: 8px;
   border-color: var(--block-border-color);
   border-style: solid;
@@ -12,7 +12,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0.5rem;
 }
 
 .inputBlock {
@@ -20,6 +19,26 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 0.4rem;
+  width: 100%;
+}
+
+.inputBlock input {
+  background-color: #e1dede;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-style: dashed;
+  padding: 0.5em;
+  width: inherit;
+  box-sizing: border-box;
+}
+
+.inputBlock input:focus {
+  border: none;
+  box-shadow: 1px 4px 8px 2px black;
+  outline: solid 2px #b69de9;
 }
 
 .inputBlock label {
@@ -36,13 +55,17 @@
 
 .loginButton {
   align-self: center;
+  margin-top: 0.3rem;
+  padding: 0.2rem;
 }
 
 .toggleVisibleButton {
   cursor: pointer;
   position: absolute;
   right: 0;
-  height: 1em;
+  height: 0.9em;
+  margin-right: 0.2em;
+  z-index: 1;
 }
 
 .errorMessageBlock {
@@ -74,11 +97,12 @@
   }
 
   .loginComponent input {
-    width: 99%;
-    box-sizing: content-box;
+    width: inherit;
+    box-sizing: border-box;
+    padding: 0.8em;
   }
 
-  .inputBlock {
-    width: 100%;
+  .toggleVisibleButton {
+    height: 1.1em;
   }
 }

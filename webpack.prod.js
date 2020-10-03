@@ -6,6 +6,24 @@ const common = require("./webpack.common.js")
 
 module.exports = merge(common, {
   mode: "production",
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
+        ],
+      },
+    ],
+  },
   plugins: [
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ["**/*", "!404.html"],

@@ -15,4 +15,24 @@ module.exports = merge(common, {
   watchOptions: {
     ignored: /node_modules/,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "__[local]--[hash:base64:5]",
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
 })
