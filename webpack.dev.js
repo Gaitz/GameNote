@@ -7,7 +7,9 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   devServer: {
     contentBase: path.join(__dirname, "docs"),
+    publicPath: "/GameNote/",
     open: true,
+    openPage: "GameNote/",
     hot: true,
   },
   watchOptions: {
