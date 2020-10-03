@@ -34,12 +34,14 @@
   font-size: 1.1em;
   width: inherit;
   box-sizing: border-box;
+  transition: all 0.2s ease;
 }
 
 .inputBlock input:focus {
   border: none;
   box-shadow: 1px 4px 8px 2px black;
   outline: solid 2px #b69de9;
+  transition: all 0.2s ease;
 }
 
 .inputBlock label {
