@@ -2,7 +2,7 @@
   background-color: var(--block-background-color);
   margin: 0 auto;
   width: 20rem;
-  padding: 1rem;
+  padding: 1rem 1rem 0.8rem 1rem;
   border-radius: 8px;
   border-color: var(--block-border-color);
   border-style: solid;
@@ -30,7 +30,8 @@
   border-left: none;
   border-right: none;
   border-bottom-style: dashed;
-  padding: 0.5em;
+  padding: 0.5rem;
+  font-size: 1.1em;
   width: inherit;
   box-sizing: border-box;
 }
@@ -99,7 +100,9 @@
   .loginComponent input {
     width: inherit;
     box-sizing: border-box;
-    padding: 0.8em;
+    font-size: 1.5em;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
   }
 
   .toggleVisibleButton {
