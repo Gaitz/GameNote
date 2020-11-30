@@ -1,7 +1,9 @@
 :root {
-  --main-background-color: #e2f6d0;
+  --main-color: #e2f6d0;
+  --secondary-color: #b3daff;
   --block-background-color: #fffdfa;
-  --block-border-color: #b3daff;
+  --input-background-color: #e1dede;
+  --outline-color: #b69de9;
 }
 
 * {
@@ -15,7 +17,7 @@ article {
 }
 
 main {
-  background-color: var(--main-background-color);
+  background-color: var(--main-color);
   min-width: 100vw;
   min-height: 100vh;
   box-sizing: content-box;

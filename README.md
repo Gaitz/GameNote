@@ -21,11 +21,12 @@ Main Screen, detect firebase authentication, and setup login progress.
 - Authentication login, sign out
 
   - follow https://web.dev/sign-in-form-best-practices/
+  - follow [Password Form Styles that Chromium Understands](https://dev.chromium.org/developers/design-documents/form-styles-that-chromium-understands)
   - Todos
     TODO: add [google reCAPTCHA](https://support.google.com/recaptcha/?hl=en), I'm not a robot
 
 - Main page
   - Todos
     TODO: layout design
-    TODO: log system
     TODO: Workout link
+    TODO: log system

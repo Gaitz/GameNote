@@ -4,7 +4,7 @@
   width: 20rem;
   padding: 1rem 1rem 0.8rem 1rem;
   border-radius: 8px;
-  border-color: var(--block-border-color);
+  border-color: var(--secondary-color);
   border-style: solid;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .inputBlock input {
-  background-color: #e1dede;
+  background-color: var(--input-background-color);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   border-top: none;
@@ -40,7 +40,7 @@
 .inputBlock input:focus {
   border: none;
   box-shadow: 1px 4px 8px 2px black;
-  outline: solid 2px #b69de9;
+  outline: solid 2px var(--outline-color);
   transition: all 0.2s ease;
 }
 
