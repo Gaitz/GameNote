@@ -3,6 +3,10 @@ import styles from "./Main.style.css"
 import { useSelector } from "react-redux"
 
 export default function Main() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const userInfo = useSelector((state) => state.authentication.user)
 
   return (

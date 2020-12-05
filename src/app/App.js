@@ -1,10 +1,5 @@
 import React from "react"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom"
+import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom"
 import "normalize.css"
 import "game-note/shared/shared.style.css"
 import Main from "game-note/features/main/Main"
@@ -19,7 +14,7 @@ export default function App() {
   const isLogin = useSelector((state) => state.authentication.user)
 
   return (
-    <Router basename="/GameNote/">
+    <Router>
       {isLogin ? <Redirect to="/" /> : <Redirect to="/login" />}
 
       <Switch>

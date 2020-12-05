@@ -4,7 +4,7 @@
   "description": "Game Note web APP",
   "main": "src/index.js",
   "scripts": {
-    "develop": "webpack-dev-server --config webpack.dev.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "prettier": "prettier --check ./src/",
     "eslint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
