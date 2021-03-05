@@ -7,14 +7,13 @@ My note system
 - [x] Next.js (deploy on Vercel)
 - [x] TypeScript
 - [x] React
-- [ ] ESLint
-- [ ] Prettier
-- [ ] Git hook (Husky)
-- [ ] Firebase for database and authentication
-- [ ] CSS modules
-- [ ] Redux Toolkit, Redux thunk
-- [ ] Unit Testing with Jest / React Testing Library / Testing Library jest-dom / Redux mock store
-- [ ] End-to-End Testing with TestCafe 
+- [x] ESLint
+- [x] Git hook (Husky)
+- [x] CSS modules
+- [x] Firebase for database and authentication
+- [x] Redux Toolkit, Redux thunk
+- [x] Unit Testing with Jest / React Testing Library / Testing Library jest-dom / Redux mock store
+- [x] End-to-End Testing with TestCafe 
 
 ## Todo
 
