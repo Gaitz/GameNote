@@ -10,24 +10,26 @@ import { useSelector } from "react-redux"
 /*
  * React Root component
  */
-export default function App() {
-  const isLogin = useSelector((state) => state.authentication.user)
+export default function App () {
+    const isLogin = useSelector((state) => state.authentication.user)
 
-  return (
-    <Router>
-      {isLogin ? <Redirect to="/" /> : <Redirect to="/login" />}
+    return (
+        <Router>
+            {isLogin
+                ? <Redirect to="/" />
+                : <Redirect to="/login" />}
 
-      <Switch>
-        <Route exact path="/">
-          <Main />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="*">
-          <NotMatches />
-        </Route>
-      </Switch>
-    </Router>
-  )
+            <Switch>
+                <Route exact path="/">
+                    <Main />
+                </Route>
+                <Route path="/login">
+                    <Login />
+                </Route>
+                <Route path="*">
+                    <NotMatches />
+                </Route>
+            </Switch>
+        </Router>
+    )
 }

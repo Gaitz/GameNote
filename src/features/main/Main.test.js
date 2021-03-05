@@ -6,16 +6,17 @@ import Main from "./Main"
 
 const mockStore = configureStore()
 
-test.only("main component snapshot testing", () => {
-  const store = mockStore({
-    authentication: { user: { email: "test@gmail.com" } },
-  })
+test.only(
+    "main component snapshot testing",
+    () => {
+        const store = mockStore({
+            authentication: { user: { email: "test@gmail.com" } }
+        })
 
-  const { container } = render(
-    <Provider store={store}>
-      <Main />
-    </Provider>
-  )
+        const { container } = render(<Provider store={store}>
+            <Main />
+        </Provider>)
 
-  expect(container).toMatchSnapshot()
-})
+        expect(container).toMatchSnapshot()
+    }
+)

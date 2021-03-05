@@ -1,20 +1,19 @@
-import * as firebase from "firebase/app"
 import "firebase/firestore"
 import "firebase/auth"
 import "firebase/analytics"
+import * as firebase from "firebase/app"
 import config from "./firebase.config"
 
 class FirebaseService {
-  constructor(config) {
-    firebase.initializeApp(config)
-    this._initialServices()
-    this.auth = firebase.auth()
-    this.db = firebase.firestore()
-  }
-
-  _initialServices() {
-    firebase.analytics()
-  }
+    constructor (firebaseSDK, initialConfig) {
+        firebaseSDK.initializeApp(initialConfig)
+        firebaseSDK.analytics()
+        this.auth = firebaseSDK.auth()
+        this.db = firebaseSDK.firestore()
+    }
 }
 
-export default new FirebaseService(config)
+export default new FirebaseService(
+    firebase,
+    config
+)
