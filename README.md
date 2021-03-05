@@ -14,6 +14,7 @@ My note system
 - [x] Redux Toolkit, Redux thunk
 - [x] Unit Testing with Jest / React Testing Library / Testing Library jest-dom / Redux mock store
 - [x] End-to-End Testing with TestCafe 
+- [x] MaterialUI
 
 ## Todo
 
