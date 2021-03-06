@@ -18,5 +18,6 @@ My note system
 
 ## Todo
 
+- [ ] Navigator
 - [ ] Main Page and Navigator
 - [ ] Workout Page

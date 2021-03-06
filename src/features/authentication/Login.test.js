@@ -8,28 +8,28 @@ import Login from "./Login"
 const mockStore = configureStore()
 
 test(
-    "test password toggle visible",
-    () => {
-        const initialState = {
-            authentication: {
-                user: null,
-                error: null,
-                isPending: false
-            }
-        }
-        const store = mockStore(initialState)
-        const { container, getByTestId, getByLabelText } = render(<Provider store={store}>
-            <Login />
-        </Provider>)
-        expect(container).toMatchSnapshot()
-
-        const toggleVisibleButton = getByTestId("toggleVisible")
-        expect(toggleVisibleButton).toBeTruthy()
-        fireEvent.click(toggleVisibleButton)
-
-        expect(getByLabelText("Password:")).toHaveAttribute(
-            "type",
-            "text"
-        )
+  "test password toggle visible",
+  () => {
+    const initialState = {
+      authentication: {
+        user: null,
+        error: null,
+        isPending: false
+      }
     }
+    const store = mockStore(initialState)
+    const { container, getByTestId, getByLabelText } = render(<Provider store={store}>
+      <Login />
+    </Provider>)
+    expect(container).toMatchSnapshot()
+
+    const toggleVisibleButton = getByTestId("toggleVisible")
+    expect(toggleVisibleButton).toBeTruthy()
+    fireEvent.click(toggleVisibleButton)
+
+    expect(getByLabelText("Password:")).toHaveAttribute(
+      "type",
+      "text"
+    )
+  }
 )

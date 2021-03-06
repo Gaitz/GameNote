@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React from "react"
 import Head from "next/head"
-import styles from "../styles/Home.module.css"
 
 export default function Home () {
     return (
@@ -38,7 +37,7 @@ export default function Home () {
                         className={styles.card}
                     >
                         <h3>Examples &rarr;</h3>
-                        <p>Discover and deploy boilerplate example Next.js projects.</p>
+                      <p>Discover and deploy boilerplate example Next.js projects.</p>
                     </a>
 
                     <a

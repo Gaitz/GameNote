@@ -1,6 +1,6 @@
 module.exports = {
-    analytics: () => null,
-    initializeApp: () => null,
-    auth: () => null,
-    firestore: () => null
+  analytics: () => null,
+  initializeApp: () => null,
+  auth: () => null,
+  firestore: () => null
 }
