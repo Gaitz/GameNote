@@ -1,5 +1,15 @@
-import { Typography } from "@material-ui/core"
+import { Grid, Typography } from "@material-ui/core"
+import Head from "next/head"
 
 export default function Home () {
-  return <Typography variant="h1" color="primary">Hello world</Typography>
+  return <>
+    <Head>
+      <title>Game Note</title>
+    </Head>
+    <Grid container direction="column" justify="center" alignItems="center">
+      <Grid item>
+        <Typography variant="h1" color="primary">Hello world</Typography>
+      </Grid>
+    </Grid>
+  </>
 }
