@@ -4,13 +4,8 @@ import "firebase/firestore"
 import "firebase/auth"
 import "firebase/analytics"
 
-const APP_NAME = "game-note"
-
-function getFirebaseService () {
-  if (firebase.apps.length > 0) {
-    return firebase.apps.find((app) => app.name === APP_NAME)
+export default function initializeClientSideFirebaseService (): void {
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig)
   }
-  return firebase.initializeApp(firebaseConfig, APP_NAME)
 }
-
-export default getFirebaseService()

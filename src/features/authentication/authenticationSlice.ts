@@ -1,9 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import firebase from "firebase/app"
 
 interface AuthenticationSlice {
-  user: firebase.User | null
+  user: AppUser | null
 }
+
+export type AppUser = {
+    displayName: string | null,
+    email: string | null,
+    photoURL: string | null
+  } | null
 
 const initialState: AuthenticationSlice = {
   user: null
@@ -13,8 +18,16 @@ export const authenticationSlice = createSlice({
   name: "authentication",
   initialState,
   reducers: {
-    authStateChange: (state, action: PayloadAction<firebase.User | null>) => {
-      state.user = action.payload
+    authStateChange: (state, action: PayloadAction<AppUser>) => {
+      if (!action.payload) {
+        state.user = null
+      } else {
+        state.user = {
+          displayName: action.payload?.displayName ?? null,
+          email: action.payload?.email ?? null,
+          photoURL: action.payload?.photoURL ?? null
+        }
+      }
     }
   }
 })
