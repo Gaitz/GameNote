@@ -9,7 +9,6 @@ My note system
 - [x] React
 - [x] ESLint
 - [x] Git hook (Husky)
-- [x] CSS modules
 - [x] Firebase for database and authentication
 - [x] Redux Toolkit, Redux thunk
 - [x] Unit Testing with Jest / React Testing Library / Testing Library jest-dom / Redux mock store
