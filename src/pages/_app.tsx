@@ -1,24 +1,12 @@
-import { useEffect } from "react";
 import type { AppProps } from "next/app"
 import Head from "next/head";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { Provider as ReduxProvider } from "react-redux"
 import theme from "game-note/shared/styles/theme"
-import store from "game-note/app/store"
-import firebaseService from "game-note/services/firebaseService"
+import store from "game-note/shared/store"
 
 function MyApp ({ Component, pageProps }: AppProps) {
-  // Trigger global observer
-  useEffect(() => {
-    if (firebaseService) {
-      const unsubscribe = firebaseService.auth().onAuthStateChanged((user) => {
-        console.log(user)
-      })
-      return unsubscribe
-    }
-  }, [])
-
   return (
     <>
       <Head>

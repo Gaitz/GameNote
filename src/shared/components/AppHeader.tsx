@@ -12,7 +12,7 @@ export default function AppHeader () {
   const classes = useStyles();
 
   return (
-    <AppBar position="fixed">
+    <AppBar position="static">
       <Toolbar>
         <Typography>
           Game Note
