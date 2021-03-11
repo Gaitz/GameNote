@@ -5,9 +5,9 @@ interface AuthenticationSlice {
 }
 
 export type AppUser = {
-    displayName: string | null,
-    email: string | null,
-    photoURL: string | null
+    displayName?: string | null,
+    email?: string | null,
+    photoURL?: string | null
   } | null
 
 const initialState: AuthenticationSlice = {
@@ -23,9 +23,9 @@ export const authenticationSlice = createSlice({
         state.user = null
       } else {
         state.user = {
-          displayName: action.payload?.displayName ?? null,
-          email: action.payload?.email ?? null,
-          photoURL: action.payload?.photoURL ?? null
+          displayName: action.payload?.displayName,
+          email: action.payload?.email,
+          photoURL: action.payload?.photoURL
         }
       }
     }

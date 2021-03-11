@@ -13,6 +13,7 @@ export default function FirebaseLogin () {
     initializeClientSideFirebaseService()
 
     ui.start(`#${FIREBASEUI_LOGIN_ELEMENT}`, {
+      //      signInSuccessUrl: "/",
       signInOptions: [
         firebase.auth.GithubAuthProvider.PROVIDER_ID,
         firebase.auth.EmailAuthProvider.PROVIDER_ID

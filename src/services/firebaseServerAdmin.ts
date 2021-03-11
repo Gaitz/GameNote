@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import * as admin from "firebase-admin"
 import firebaseConfig from "./firebase.config";
+import { AppUser } from "game-note/features/authentication"
 
 function initializeServerFirebaseService (): void {
   const adminServiceIsNotInitial = admin.apps.length <= 0
@@ -25,6 +26,10 @@ function initializeServerFirebaseService (): void {
 }
 
 export async function verifyIdToken (rawToken: string) {
+  if (!rawToken) {
+    return null
+  }
+
   initializeServerFirebaseService()
 
   let verifiedToken: admin.auth.DecodedIdToken | null = null
@@ -37,4 +42,27 @@ export async function verifyIdToken (rawToken: string) {
   }
 
   return verifiedToken
+}
+
+export type GetAppUserFromToken = (rawToken: string) => Promise<AppUser>
+
+export const getAppUserFromToken: GetAppUserFromToken = async (rawToken) => {
+  if (!rawToken) {
+    return null
+  }
+
+  initializeServerFirebaseService()
+
+  const verifiedToken = await verifyIdToken(rawToken)
+
+  if (!verifiedToken) {
+    return null
+  }
+
+  const { displayName, email, photoURL } = await admin.auth().getUser(verifiedToken.uid)
+  return {
+    displayName,
+    email,
+    photoURL
+  }
 }

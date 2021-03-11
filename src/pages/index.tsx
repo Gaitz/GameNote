@@ -4,14 +4,14 @@ import Head from "next/head"
 import firebase from "firebase/app"
 import nookies from "nookies"
 import { useAppDispatch, useAppSelector } from "game-note/shared/store";
-import { Login, authStateChange } from "game-note/features/authentication"
+import { Login, authStateChange, AppUser } from "game-note/features/authentication"
 import { Welcome } from "game-note/features/main";
 import initializeClientSideFirebaseService from "game-note/services/firebaseService"
-import { verifyIdToken } from "game-note/services/firebaseServerAdmin"
+import { getAppUserFromToken } from "game-note/services/firebaseServerAdmin"
 
-export default function Home () {
+export default function Home ({ currentUser }: { currentUser: AppUser }) {
   const dispatch = useAppDispatch()
-  const currentUser = useAppSelector((state) => state.authentication.user)
+  // const currentUser = useAppSelector((state) => state.authentication.user)
 
   useEffect(() => {
     initializeClientSideFirebaseService()
@@ -19,10 +19,12 @@ export default function Home () {
     const unsubscribe = firebase.auth().onAuthStateChanged(async (user) => {
       if (!user) {
         nookies.set(null, "token", "")
+
         dispatch(authStateChange(user))
       } else {
         const token = await user.getIdToken()
         nookies.set(null, "token", token)
+
         dispatch(authStateChange({
           displayName: user.displayName,
           email: user.email,
@@ -39,28 +41,32 @@ export default function Home () {
     </Head>
     {
       currentUser
-        ? <Welcome />
+        ? <><Welcome />
+          <div>{currentUser.displayName}</div>
+        </>
         : <Login />
     }
   </>
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const emptyUser = { props: { currentUser: null } }
+
   try {
     const cookies = nookies.get(context)
     const tokenFromCookies = cookies.token
+    const appUser = await getAppUserFromToken(tokenFromCookies)
 
-    if (!tokenFromCookies) {
-      return { props: { currentUser: null } }
+    if (!appUser) {
+      return emptyUser
     }
 
-    const token = await verifyIdToken(tokenFromCookies)
-    console.warn(token)
-    return { props: {} }
+
+    return { props: { currentUser: appUser } }
   } catch (error) {
     console.error(error)
   }
 
-  return { props: {} }
+  return emptyUser
 }
 
