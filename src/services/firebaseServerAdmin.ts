@@ -3,6 +3,10 @@ import * as admin from "firebase-admin"
 import firebaseConfig from "./firebase.config";
 import { AppUser } from "game-note/features/authentication"
 
+export type GetAppUserFromToken = (rawToken: string) => Promise<AppUser>
+
+initializeFirebaseAdmin()
+
 function initializeFirebaseAdmin (): void {
   const adminServiceIsNotInitial = admin.apps.length <= 0
 
@@ -30,8 +34,6 @@ export async function verifyIdToken (rawToken: string) {
     return null
   }
 
-  initializeFirebaseAdmin()
-
   let verifiedToken: admin.auth.DecodedIdToken | null = null
 
   try {
@@ -44,14 +46,10 @@ export async function verifyIdToken (rawToken: string) {
   return verifiedToken
 }
 
-export type GetAppUserFromToken = (rawToken: string) => Promise<AppUser>
-
 export const getAppUserFromToken: GetAppUserFromToken = async (rawToken) => {
   if (!rawToken) {
     return null
   }
-
-  initializeFirebaseAdmin()
 
   const verifiedToken = await verifyIdToken(rawToken)
 
