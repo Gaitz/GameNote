@@ -16,8 +16,6 @@ function initializeFirebaseAdmin (): void {
     clientEmail: process.env.ADMIN_CLIENT_EMAIL
   }
 
-  console.log(serviceAccount)
-
   if (adminServiceIsNotInitial) {
     try {
       admin.initializeApp({
