@@ -1,4 +1,3 @@
-import { Typography } from "@material-ui/core";
 import { useAppSelector } from "game-note/shared/store";
 import AppHeader from "game-note/shared/components/AppHeader";
 
@@ -7,6 +6,6 @@ export function Welcome () {
 
   return <>
     <AppHeader />
-    <Typography>Welcome Back, {currentUser?.displayName}</Typography>
+    <p>Welcome Back, {currentUser?.displayName}</p>
   </>
 }

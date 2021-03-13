@@ -1,19 +1,17 @@
-import { Grid, Typography } from "@material-ui/core";
-import dynamic from "next/dynamic"
-
-const FirebaseLoginWithNoSSR = dynamic(
-  () => import("./FirebaseLogin"),
-  { ssr: false }
-)
+import { useFirebaseAuthLogin } from "game-note/features/authentication"
 
 export function Login () {
-  return <Grid container>
-    <Grid item container direction="column">
-      <Typography>Welcome,</Typography>
-      <Typography>Game Note</Typography>
-    </Grid>
-    <Grid item>
-      <FirebaseLoginWithNoSSR />
-    </Grid>
-  </Grid>
+  const { isLoading, handleGitHubSignIn } = useFirebaseAuthLogin()
+
+  if (isLoading) {
+    return <p>loading</p>
+  }
+
+  return (
+    <>
+      <h1>Welcome Game Note</h1>
+      <button onClick={handleGitHubSignIn}>GitHub Login</button>
+      <button>Email Login</button>
+    </>
+  )
 }

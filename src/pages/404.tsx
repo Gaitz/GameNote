@@ -1,10 +1,8 @@
-import { Grid, Typography } from "@material-ui/core";
-
-
 export default function Page404 () {
   return (
-    <Grid container direction="column" justify="space-between" alignItems="center">
-      <Grid item><Typography variant="h1">找不到喔～ 404</Typography></Grid>
-    </Grid>
+    <>
+      <h1>揣無啦～</h1>
+      <h2>You get 404</h2>
+    </>
   )
 }

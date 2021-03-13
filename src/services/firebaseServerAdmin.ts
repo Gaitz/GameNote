@@ -3,7 +3,7 @@ import * as admin from "firebase-admin"
 import firebaseConfig from "./firebase.config";
 import { AppUser } from "game-note/features/authentication"
 
-function initializeServerFirebaseService (): void {
+function initializeFirebaseAdmin (): void {
   const adminServiceIsNotInitial = admin.apps.length <= 0
 
   const serviceAccount: admin.ServiceAccount = {
@@ -30,14 +30,14 @@ export async function verifyIdToken (rawToken: string) {
     return null
   }
 
-  initializeServerFirebaseService()
+  initializeFirebaseAdmin()
 
   let verifiedToken: admin.auth.DecodedIdToken | null = null
 
   try {
     verifiedToken = await admin.auth().verifyIdToken(rawToken)
   } catch (error: unknown) {
-    console.error("verifyIdToken failed with rawToken")
+    console.error(`verifyIdToken failed with rawToken ${rawToken}`)
     console.error(error)
   }
 
@@ -51,7 +51,7 @@ export const getAppUserFromToken: GetAppUserFromToken = async (rawToken) => {
     return null
   }
 
-  initializeServerFirebaseService()
+  initializeFirebaseAdmin()
 
   const verifiedToken = await verifyIdToken(rawToken)
 
