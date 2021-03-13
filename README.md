@@ -8,12 +8,12 @@ My note system
 - [x] Next.js (deploy on Vercel)
 - [x] TypeScript
 - [x] ESLint
-- [x] Redux Toolkit, Redux thunk
+- [x] Redux, Redux Toolkit ( Redux thunk ), Server-side Redux (next-redux-wrapper)
 - [x] Git hook (Husky)
-- [x] MaterialUI
 - [x] Firebase for database and authentication
-- [x] Unit Testing with Jest / React Testing Library / Testing Library jest-dom / Redux mock store
-- [x] End-to-End Testing with TestCafe 
+- [ ] Chakra UI
+- [ ] Unit Testing with Jest / React Testing Library / Testing Library jest-dom / Redux mock store
+- [ ] End-to-End Testing with TestCafe 
 
 ## Todo
 
