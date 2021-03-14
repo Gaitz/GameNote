@@ -11,9 +11,9 @@ interface AuthenticationState {
 }
 
 export type AppUser = {
-    displayName?: string | null,
-    email?: string | null,
-    photoURL?: string | null
+    displayName: string | null,
+    email: string | null,
+    photoURL: string | null
   } | null
 
 const initialState: AuthenticationState = {

@@ -1,9 +1,12 @@
+import { useMemo } from "react"
+import { Provider as ReduxProvider } from "react-redux"
 import type { AppProps } from "next/app"
 import Head from "next/head";
-import { Provider as ReduxProvider } from "react-redux"
+import { ChakraProvider } from "@chakra-ui/react"
 import store, { wrapper } from "game-note/shared/store"
 import { initializeClientSideFirebaseService } from "game-note/services/firebaseService"
-import { useMemo } from "react"
+import theme from "game-note/shared/styles/theme"
+
 
 function MyApp ({ Component, pageProps }: AppProps) {
   useMemo(initializeClientSideFirebaseService, [])
@@ -17,9 +20,10 @@ function MyApp ({ Component, pageProps }: AppProps) {
       </Head>
 
       <ReduxProvider store={store}>
-        <Component {...pageProps} />
+        <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
       </ReduxProvider>
-
     </>
   )
 }

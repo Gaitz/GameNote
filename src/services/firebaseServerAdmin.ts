@@ -58,9 +58,10 @@ export const getAppUserFromToken: GetAppUserFromToken = async (rawToken) => {
   }
 
   const { displayName, email, photoURL } = await admin.auth().getUser(verifiedToken.uid)
+
   return {
-    displayName,
-    email,
-    photoURL
+    displayName: displayName ?? null,
+    email: email ?? null,
+    photoURL: photoURL ?? null
   }
 }

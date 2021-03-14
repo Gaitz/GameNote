@@ -38,3 +38,6 @@ yarn-error.log*
 
 # secret
 firebaseServerAdminSecret.json
+
+# development
+src/pages/developmentUse.tsx
