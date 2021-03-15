@@ -1,9 +1,15 @@
-import { Button, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
-import { useFirebaseAuthLogin } from "game-note/features/authentication"
+import { Button, Fade, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
+import { useFirebaseAuthLogin, EmailLogin } from "game-note/features/authentication"
 import { Loading } from "game-note/shared/components"
+import { useState } from "react"
 
 export function Login () {
   const { isLoading, handleGitHubSignIn } = useFirebaseAuthLogin()
+
+  const [
+    emailInputVisible,
+    toggleEmailInputVisible
+  ] = useState(false)
 
   if (isLoading) {
     return <Loading />
@@ -16,7 +22,7 @@ export function Login () {
         "36"
       ]}
       flexDirection="row"
-      alignItems="center"
+      alignItems="flex-start"
       justifyContent="center"
       flexWrap="wrap"
     >
@@ -51,7 +57,10 @@ export function Login () {
         ]}
       >
         <Button onClick={handleGitHubSignIn}>GitHub Login</Button>
-        <Button>Email Login</Button>
+        <Button onClick={() => toggleEmailInputVisible(!emailInputVisible)}>Email Login</Button>
+        <Fade in={emailInputVisible}>
+          <EmailLogin />
+        </Fade>
       </SimpleGrid>
     </Flex>
   )

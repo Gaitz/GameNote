@@ -30,6 +30,7 @@
     "rules": {
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
         "accessor-pairs": "error",
         "array-bracket-newline": "error",
         "array-bracket-spacing": "error",

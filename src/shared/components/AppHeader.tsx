@@ -30,7 +30,7 @@ export function AppHeader () {
           icon={<HamburgerIcon />}
         >
         </MenuButton>
-        <MenuList as="nav"
+        <MenuList
           width="max-content" minWidth={[
             "auto",
             "24",
