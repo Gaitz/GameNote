@@ -37,6 +37,7 @@ export function EmailLogin () {
         <FormControl isRequired gridColumn={2}>
           <FormLabel>Password</FormLabel>
           <Input
+            autoComplete="current-password"
             name={PASSWORD_INPUT_NAME}
             type={passwordVisible
               ? "text"
