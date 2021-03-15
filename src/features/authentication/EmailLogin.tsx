@@ -7,7 +7,7 @@ export function EmailLogin () {
   const EMAIL_INPUT_NAME = "Email"
   const PASSWORD_INPUT_NAME = "Password"
 
-  const { handleEmailSignIn, handleEmailSignUp } = useFirebaseAuthEmailLogin({
+  const { handleEmailSignIn, handleEmailSignUp, isSubmitting } = useFirebaseAuthEmailLogin({
     EMAIL_FORM_ID,
     EMAIL_INPUT_NAME,
     PASSWORD_INPUT_NAME
@@ -58,10 +58,24 @@ export function EmailLogin () {
         </FormControl>
       </GridItem>
       <GridItem textAlign="center">
-        <Button type="submit" onClick={handleEmailSignIn} colorScheme="purple">Sign In</Button>
+        <Button
+          type="submit"
+          onClick={handleEmailSignIn}
+          isDisabled={isSubmitting}
+          colorScheme="purple"
+        >
+          Sign In
+        </Button>
       </GridItem>
       <GridItem textAlign="center">
-        <Button type="submit" onClick={handleEmailSignUp} colorScheme="purple">Sign Up</Button>
+        <Button
+          type="submit"
+          onClick={handleEmailSignUp}
+          isDisabled={isSubmitting}
+          colorScheme="purple"
+        >
+            Sign Up
+        </Button>
       </GridItem>
     </Grid>
   )

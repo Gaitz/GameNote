@@ -9,7 +9,8 @@ type UseFirebaseAuthLogin = () => { isLoading: boolean, handleGitHubSignIn: () =
 type EMAIL_LOGIN_FORM = { EMAIL_FORM_ID: string, EMAIL_INPUT_NAME: string, PASSWORD_INPUT_NAME: string }
 type UseFirebaseAuthEmailLogin = ({ EMAIL_FORM_ID, EMAIL_INPUT_NAME, PASSWORD_INPUT_NAME }: EMAIL_LOGIN_FORM) => {
   handleEmailSignIn: () => void,
-  handleEmailSignUp: () => void
+  handleEmailSignUp: () => void,
+  isSubmitting: boolean
 }
 type UseFirebaseAuthLogout = () => { handleSignOut: () => void }
 
@@ -58,11 +59,17 @@ export const useFirebaseAuthLogin: UseFirebaseAuthLogin = () => {
 export const useFirebaseAuthEmailLogin: UseFirebaseAuthEmailLogin = ({ EMAIL_FORM_ID, EMAIL_INPUT_NAME, PASSWORD_INPUT_NAME }) => {
   const dispatch = useAppDispatch()
   const toast = useToast()
+  const [
+    isSubmitting,
+    setSubmitting
+  ] = useState(false)
 
   type SubmitType = "SignUp" | "SignIn"
   type GetFirebaseEmailLoginHandler = (submitType : SubmitType) => () => void
 
   const getFirebaseEmailLoginHandler: GetFirebaseEmailLoginHandler = (submitType) => () => {
+    setSubmitting(true)
+
     const loginForm = document?.getElementById(EMAIL_FORM_ID) as HTMLFormElement
     const isValidForm = loginForm?.checkValidity() ?? true
 
@@ -90,6 +97,9 @@ export const useFirebaseAuthEmailLogin: UseFirebaseAuthEmailLogin = ({ EMAIL_FOR
             status: "error",
             isClosable: true
           })
+        }).
+        finally(() => {
+          setSubmitting(false)
         })
     }
   }
@@ -99,7 +109,8 @@ export const useFirebaseAuthEmailLogin: UseFirebaseAuthEmailLogin = ({ EMAIL_FOR
 
   return {
     handleEmailSignIn,
-    handleEmailSignUp
+    handleEmailSignUp,
+    isSubmitting
   }
 }
 
