@@ -11,9 +11,10 @@ My note system
 - [x] Redux, Redux Toolkit ( Redux thunk ), Server-side Redux (next-redux-wrapper)
 - [x] Git hook (Husky)
 - [x] Firebase for database and authentication
-- [ ] Chakra UI
+- [x] Chakra UI
+- [x] Prettier
 - [ ] Unit Testing with Jest / React Testing Library / Testing Library jest-dom / Redux mock store
-- [ ] End-to-End Testing with TestCafe 
+- [ ] End-to-End Testing with TestCafe
 
 ## Todo
 

@@ -39,14 +39,7 @@ const theme = extendTheme({
       }
     },
     Menu: {
-      parts: [
-        "item",
-        "command",
-        "list",
-        "button",
-        "groupTitle",
-        "divider"
-      ],
+      parts: ["item", "command", "list", "button", "groupTitle", "divider"],
       baseStyle: {
         groupTitle: {
           textAlign: "center",
