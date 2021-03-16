@@ -1,5 +1,11 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
-import { configureStore, Reducer, combineReducers, Action, ThunkAction } from "@reduxjs/toolkit"
+import {
+  configureStore,
+  Reducer,
+  combineReducers,
+  Action,
+  ThunkAction
+} from "@reduxjs/toolkit"
 import { MakeStore, createWrapper, HYDRATE } from "next-redux-wrapper"
 import authentication from "game-note/features/authentication/authenticationSlice"
 
@@ -7,13 +13,15 @@ const combinedReducer = combineReducers({
   authentication
 })
 
-const reducer: Reducer<ReturnType<typeof combinedReducer>> = (state, action) => {
+const reducer: Reducer<ReturnType<typeof combinedReducer>> = (
+  state,
+  action
+) => {
   switch (action.type) {
-  case HYDRATE:
-    return { ...state,
-      ...action.payload }
-  default:
-    return combinedReducer(state, action)
+    case HYDRATE:
+      return { ...state, ...action.payload }
+    default:
+      return combinedReducer(state, action)
   }
 }
 

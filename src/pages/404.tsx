@@ -1,4 +1,4 @@
-export default function Page404 () {
+export default function Page404() {
   return (
     <>
       <h1>揣無啦～</h1>

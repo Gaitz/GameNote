@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 import * as admin from "firebase-admin"
-import firebaseConfig from "./firebase.config";
+import firebaseConfig from "./firebase.config"
 import { AppUser } from "game-note/features/authentication"
 
 export type GetAppUserFromToken = (rawToken: string) => Promise<AppUser>
 
 initializeFirebaseAdmin()
 
-function initializeFirebaseAdmin (): void {
+function initializeFirebaseAdmin(): void {
   const adminServiceIsNotInitial = admin.apps.length <= 0
 
   const serviceAccount: admin.ServiceAccount = {
@@ -29,7 +29,7 @@ function initializeFirebaseAdmin (): void {
   }
 }
 
-export async function verifyIdToken (rawToken: string) {
+export async function verifyIdToken(rawToken: string) {
   if (!rawToken) {
     return null
   }
@@ -57,10 +57,13 @@ export const getAppUserFromToken: GetAppUserFromToken = async (rawToken) => {
     return null
   }
 
-  const { displayName, email, photoURL } = await admin.auth().getUser(verifiedToken.uid)
+  const { displayName, email, photoURL } = await admin
+    .auth()
+    .getUser(verifiedToken.uid)
+
   return {
-    displayName,
-    email,
-    photoURL
+    displayName: displayName ?? null,
+    email: email ?? null,
+    photoURL: photoURL ?? null
   }
 }

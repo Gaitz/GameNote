@@ -11,10 +11,10 @@ interface AuthenticationState {
 }
 
 export type AppUser = {
-    displayName?: string | null,
-    email?: string | null,
-    photoURL?: string | null
-  } | null
+  displayName: string | null
+  email: string | null
+  photoURL: string | null
+} | null
 
 const initialState: AuthenticationState = {
   user: null
@@ -36,17 +36,21 @@ export const authentication = createSlice({
   }
 })
 
-export const logInFromFirebaseAuth = (user: firebase.User): AppThunk => async (dispatch) => {
+export const logInFromFirebaseAuth = (user: firebase.User): AppThunk => async (
+  dispatch
+) => {
   if (user) {
     const firebaseToken = await user.getIdToken()
     nookies.set(null, AUTH_COOKIE_KEY, firebaseToken)
     const { displayName, email, photoURL } = user
 
-    dispatch(signIn({
-      displayName,
-      email,
-      photoURL
-    }))
+    dispatch(
+      signIn({
+        displayName,
+        email,
+        photoURL
+      })
+    )
   }
 }
 
@@ -59,4 +63,3 @@ export const logOutFromFirebaseAuth = (): AppThunk => async (dispatch) => {
 export const { signIn, signOut, init } = authentication.actions
 
 export default authentication.reducer
-
