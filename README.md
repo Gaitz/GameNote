@@ -13,11 +13,12 @@ My note system
 - [x] Firebase for database and authentication
 - [x] Chakra UI
 - [x] Prettier
+- [x] I18N (Next.js i18n, next-i18next)
 - [ ] Unit Testing with Jest / React Testing Library / Testing Library jest-dom / Redux mock store
 - [ ] End-to-End Testing with TestCafe
 
 ## Todo
 
-- [ ] Authentication
-- [ ] Main Page and Navigator
+- [x] Authentication
+- [x] Main Page and Navigator
 - [ ] Workout Page

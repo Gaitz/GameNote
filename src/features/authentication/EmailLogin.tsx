@@ -8,9 +8,12 @@ import {
   GridItem
 } from "@chakra-ui/react"
 import { useState } from "react"
+import { useTranslation } from "next-i18next"
 import { useFirebaseAuthEmailLogin } from "game-note/features/authentication"
 
 export function EmailLogin() {
+  const { t } = useTranslation("login")
+
   const EMAIL_FORM_ID = "EmailLogin"
   const EMAIL_INPUT_NAME = "Email"
   const PASSWORD_INPUT_NAME = "Password"
@@ -37,7 +40,7 @@ export function EmailLogin() {
     >
       <GridItem colSpan={2}>
         <FormControl isRequired>
-          <FormLabel>Email address</FormLabel>
+          <FormLabel>{t("emailInput")}</FormLabel>
           <Input
             name={EMAIL_INPUT_NAME}
             type="email"
@@ -48,7 +51,7 @@ export function EmailLogin() {
       </GridItem>
       <GridItem colSpan={2}>
         <FormControl isRequired gridColumn={2}>
-          <FormLabel>Password</FormLabel>
+          <FormLabel>{t("passwordInput")}</FormLabel>
           <Input
             autoComplete="current-password"
             name={PASSWORD_INPUT_NAME}
@@ -61,7 +64,7 @@ export function EmailLogin() {
               size="xs"
               onClick={() => togglePasswordVisible(!passwordVisible)}
             >
-              {passwordVisible ? "Hide" : "Show"}
+              {passwordVisible ? t("hide") : t("show")}
             </Button>
           </InputRightElement>
         </FormControl>
@@ -73,7 +76,7 @@ export function EmailLogin() {
           isDisabled={isSubmitting}
           colorScheme="purple"
         >
-          Sign In
+          {t("signIn")}
         </Button>
       </GridItem>
       <GridItem textAlign="center">
@@ -83,7 +86,7 @@ export function EmailLogin() {
           isDisabled={isSubmitting}
           colorScheme="purple"
         >
-          Sign Up
+          {t("signUp")}
         </Button>
       </GridItem>
     </Grid>
