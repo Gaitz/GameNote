@@ -1,5 +1,13 @@
-import { useState } from "react"
-import { Button, Fade, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
+import { useMemo, useState } from "react"
+import {
+  Button,
+  Fade,
+  Flex,
+  Heading,
+  SimpleGrid,
+  Text,
+  Select
+} from "@chakra-ui/react"
 import { useTranslation } from "next-i18next"
 import {
   useFirebaseAuthLogin,
@@ -14,44 +22,64 @@ export function Login() {
 
   const [emailInputVisible, toggleEmailInputVisible] = useState(false)
 
+  const loginInputMarginRight = useMemo(
+    () => ({
+      base: "0",
+      md: "calc(30vw - 117.5px)",
+      lg: "calc(34vw - 117.5px)"
+    }),
+    []
+  )
+
   if (isLoading) {
     return <Loading />
   }
 
   return (
-    <Flex
-      mt={["10", "36"]}
-      flexDirection="row"
-      alignItems="flex-start"
-      justifyContent="center"
-      flexWrap="wrap"
-    >
-      <Heading
-        as="h1"
-        flexBasis={["100%", null, "50%"]}
-        fontSize={["3xl", "5xl"]}
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
+    <>
+      <Flex mr={loginInputMarginRight} justifyContent="flex-end">
+        <Select placeholder={t("languageSwitch")} width="max-content">
+          <option value="en">English</option>
+          <option value="zh-tw">繁體中文</option>
+        </Select>
+      </Flex>
+      <Flex
+        mt={["8", "32"]}
+        flexDirection="row"
+        alignItems="flex-start"
+        justifyContent={{
+          base: "center",
+          md: "flex-end"
+        }}
+        flexWrap="wrap"
       >
-        <Text variant="heading" align="center">
-          {t("welcome")}
-        </Text>
-        Game Note
-      </Heading>
-      <SimpleGrid
-        spacing="5"
-        mt={["5", null, "0"]}
-        mr={["0", null, null, "18vw"]}
-      >
-        <Button onClick={handleGitHubSignIn}>GitHub {t("login")}</Button>
-        <Button onClick={() => toggleEmailInputVisible(!emailInputVisible)}>
-          Email {t("login")}
-        </Button>
-        <Fade in={emailInputVisible}>
-          <EmailLogin />
-        </Fade>
-      </SimpleGrid>
-    </Flex>
+        <Heading
+          as="h1"
+          flexBasis={{ base: "100%", md: "45%" }}
+          fontSize={["3xl", "5xl"]}
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+        >
+          <Text variant="heading" align="center">
+            {t("welcome")}
+          </Text>
+          Game Note
+        </Heading>
+        <SimpleGrid
+          spacing="5"
+          mt={{ base: "5", md: "0" }}
+          mr={loginInputMarginRight}
+        >
+          <Button onClick={handleGitHubSignIn}>GitHub {t("login")}</Button>
+          <Button onClick={() => toggleEmailInputVisible(!emailInputVisible)}>
+            Email {t("login")}
+          </Button>
+          <Fade in={emailInputVisible}>
+            <EmailLogin />
+          </Fade>
+        </SimpleGrid>
+      </Flex>
+    </>
   )
 }
