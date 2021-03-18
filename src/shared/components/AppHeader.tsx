@@ -16,8 +16,10 @@ import {
 import { collection } from "game-note/shared/styles/theme"
 import { useFirebaseAuthLogout } from "game-note/features/authentication"
 import { useAppSelector } from "game-note/shared/store"
+import { useTranslation } from "next-i18next"
 
 export function AppHeader() {
+  const { t } = useTranslation("common")
   const { handleSignOut } = useFirebaseAuthLogout()
   const currentUser = useAppSelector((state) => state.authentication.user)
 
@@ -40,7 +42,7 @@ export function AppHeader() {
           icon={<HamburgerIcon />}
         ></MenuButton>
         <MenuList width="max-content" minWidth={["auto", "24", "40"]}>
-          <MenuGroup title="Profile">
+          <MenuGroup title={t("profile")}>
             <VStack px="2">
               <Avatar
                 name={currentUser?.displayName as string}
@@ -49,11 +51,11 @@ export function AppHeader() {
               <Text>{currentUser?.email}</Text>
             </VStack>
           </MenuGroup>
-          <MenuGroup title="Feature">
-            <MenuItem>Workout</MenuItem>
+          <MenuGroup title={t("feature")}>
+            <MenuItem>{t("workoutFeature")}</MenuItem>
           </MenuGroup>
-          <MenuGroup title="System">
-            <MenuItem onClick={handleSignOut}>Logout</MenuItem>
+          <MenuGroup title={t("system")}>
+            <MenuItem onClick={handleSignOut}>{t("signOut")}</MenuItem>
           </MenuGroup>
         </MenuList>
       </Menu>

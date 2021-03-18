@@ -2,6 +2,7 @@ import { useMemo } from "react"
 import { Provider as ReduxProvider } from "react-redux"
 import type { AppProps } from "next/app"
 import Head from "next/head"
+import { appWithTranslation } from "next-i18next"
 import { ChakraProvider } from "@chakra-ui/react"
 import store, { wrapper } from "game-note/shared/store"
 import { initializeClientSideFirebaseService } from "game-note/services/firebaseService"
@@ -27,4 +28,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default wrapper.withRedux(MyApp)
+export default wrapper.withRedux(appWithTranslation(MyApp))

@@ -11,6 +11,8 @@ import {
 import { Welcome } from "game-note/features/main"
 import { getAppUserFromToken } from "game-note/services/firebaseServerAdmin"
 
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+
 export default function Home() {
   const currentUser = useAppSelector((state) => state.authentication.user)
 
@@ -26,6 +28,9 @@ export default function Home() {
 
 export const getServerSideProps: GetServerSideProps = wrapper.getServerSideProps(
   async (context) => {
+    // @ts-ignore until next-redux-wrapper version updated to fix the Type
+    const { locale } = context
+
     const serverSideStore = context.store
     serverSideStore.dispatch(init())
 
@@ -42,6 +47,12 @@ export const getServerSideProps: GetServerSideProps = wrapper.getServerSideProps
       }
     } catch (error) {
       console.error(error)
+    }
+
+    return {
+      props: {
+        ...(await serverSideTranslations(locale ?? "", ["common", "login"]))
+      }
     }
   }
 )

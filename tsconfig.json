@@ -18,6 +18,12 @@
       "game-note/*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/index.jsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/index.jsx",
+    "next.config.js"
+  ],
   "exclude": ["node_modules"]
 }
