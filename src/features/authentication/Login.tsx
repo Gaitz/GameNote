@@ -1,19 +1,12 @@
 import { useMemo, useState } from "react"
-import {
-  Button,
-  Fade,
-  Flex,
-  Heading,
-  SimpleGrid,
-  Text,
-  Select
-} from "@chakra-ui/react"
+import { Button, Fade, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
 import { useTranslation } from "next-i18next"
 import {
   useFirebaseAuthLogin,
   EmailLogin
 } from "game-note/features/authentication"
 import { Loading } from "game-note/shared/components"
+import { ChangeLanguage } from "game-note/features/internationalization"
 
 export function Login() {
   const { t } = useTranslation("login")
@@ -38,10 +31,7 @@ export function Login() {
   return (
     <>
       <Flex mr={loginInputMarginRight} justifyContent="flex-end">
-        <Select placeholder={t("languageSwitch")} width="max-content">
-          <option value="en">English</option>
-          <option value="zh-tw">繁體中文</option>
-        </Select>
+        <ChangeLanguage />
       </Flex>
       <Flex
         mt={["8", "32"]}
