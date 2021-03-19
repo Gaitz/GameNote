@@ -6,6 +6,7 @@ import {
   logOutFromFirebaseAuth
 } from "game-note/features/authentication"
 import { useToast } from "@chakra-ui/react"
+import { useTranslation } from "next-i18next"
 
 type UseFirebaseAuthLogin = () => {
   isLoading: boolean
@@ -26,10 +27,36 @@ type UseFirebaseAuthEmailLogin = ({
   isSubmitting: boolean
 }
 type UseFirebaseAuthLogout = () => { handleSignOut: () => void }
+type UseToastErrorHandler = () => {
+  errorHandlerWithToast: (error: firebase.FirebaseError) => void
+}
+
+export const useToastErrorHandler: UseToastErrorHandler = () => {
+  const toast = useToast()
+  const { t, i18n } = useTranslation("login")
+  const currentLanguage = i18n.language
+
+  return {
+    errorHandlerWithToast: (error) => {
+      toast({
+        title: `${
+          currentLanguage !== "en" ? t(error.code.concat(".title")) : error.code
+        }`,
+        description: `${
+          currentLanguage !== "en"
+            ? t(error.code.concat(".description"))
+            : error.message
+        }`,
+        status: "error",
+        isClosable: true
+      })
+    }
+  }
+}
 
 export const useFirebaseAuthLogin: UseFirebaseAuthLogin = () => {
   const dispatch = useAppDispatch()
-  const toast = useToast()
+  const { errorHandlerWithToast } = useToastErrorHandler()
 
   const [isLoading, setIsLoading] = useState(true)
 
@@ -52,14 +79,7 @@ export const useFirebaseAuthLogin: UseFirebaseAuthLogin = () => {
         }
         setIsLoading(false)
       })
-      .catch((error) => {
-        toast({
-          title: `${error.code}`,
-          description: `${error.message}`,
-          status: "error",
-          isClosable: true
-        })
-      })
+      .catch(errorHandlerWithToast)
   }, [])
 
   return {
@@ -74,7 +94,8 @@ export const useFirebaseAuthEmailLogin: UseFirebaseAuthEmailLogin = ({
   PASSWORD_INPUT_NAME
 }) => {
   const dispatch = useAppDispatch()
-  const toast = useToast()
+  const { errorHandlerWithToast } = useToastErrorHandler()
+
   const [isSubmitting, setSubmitting] = useState(false)
 
   type SubmitType = "SignUp" | "SignIn"
@@ -108,17 +129,12 @@ export const useFirebaseAuthEmailLogin: UseFirebaseAuthEmailLogin = ({
             dispatch(logInFromFirebaseAuth(user))
           }
         })
-        .catch((error) => {
-          toast({
-            title: `${error.code}`,
-            description: `${error.message}`,
-            status: "error",
-            isClosable: true
-          })
-        })
+        .catch(errorHandlerWithToast)
         .finally(() => {
           setSubmitting(false)
         })
+    } else {
+      setSubmitting(false)
     }
   }
 
