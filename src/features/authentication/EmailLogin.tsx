@@ -42,6 +42,7 @@ export function EmailLogin() {
         <FormControl isRequired>
           <FormLabel>{t("emailInput")}</FormLabel>
           <Input
+            autoComplete="username"
             name={EMAIL_INPUT_NAME}
             type="email"
             isRequired
