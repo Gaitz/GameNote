@@ -37,6 +37,7 @@ export function ChangeLanguage() {
       placeholder={t("languageSwitch")}
       onChange={languageChangeHandler}
       width="max-content"
+      data-testid="languageSelector"
     >
       {Object.entries(supportedLocalesName).map(([locale, name]) => {
         return (

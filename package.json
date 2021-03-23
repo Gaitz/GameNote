@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "npm run unit_test && npm run e2e_test_pc && npm run e2e_test_mobile",
+    "unit_test": "jest",
+    "e2e_test_pc": "npx testcafe 'chrome:headless' __e2e__/*.ts",
+    "e2e_test_mobile": "npx testcafe 'chrome:headless:emulation:device=iphone 5/SE' __e2e__/*.ts"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.6",
