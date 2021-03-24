@@ -1,4 +1,4 @@
-import loginPage from "./pageModels/loginPage"
+import loginPage from "../pageModels/loginPage"
 
 fixture`Internationalization`.page`localhost:3000/en`
 
