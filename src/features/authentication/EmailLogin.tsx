@@ -63,6 +63,7 @@ export function EmailLogin() {
           <InputRightElement width="4.5rem">
             <Button
               size="xs"
+              data-testid="toggleVisible"
               onClick={() => togglePasswordVisible(!passwordVisible)}
             >
               {passwordVisible ? t("hide") : t("show")}
@@ -76,6 +77,7 @@ export function EmailLogin() {
           onClick={handleEmailSignIn}
           isDisabled={isSubmitting}
           colorScheme="purple"
+          data-testid="signIn"
         >
           {t("signIn")}
         </Button>
@@ -86,6 +88,7 @@ export function EmailLogin() {
           onClick={handleEmailSignUp}
           isDisabled={isSubmitting}
           colorScheme="purple"
+          data-testid="signUp"
         >
           {t("signUp")}
         </Button>

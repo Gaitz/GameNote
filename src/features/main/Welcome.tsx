@@ -11,7 +11,9 @@ export function Welcome() {
     <Fade in={true}>
       <AppHeader />
       <Flex flexDirection="column" alignItems="center" mt="5">
-        <Text fontSize="2xl">{t("welcomeBack")}</Text>
+        <Text fontSize="2xl" data-testid="welcomeBack">
+          {t("welcomeBack")}
+        </Text>
         <Text mt="2" fontSize="xl">
           {currentUser?.displayName}
         </Text>
