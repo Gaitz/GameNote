@@ -56,7 +56,9 @@ export function AppHeader() {
             <MenuItem>{t("workoutFeature")}</MenuItem>
           </MenuGroup>
           <MenuGroup title={t("system")}>
-            <MenuItem onClick={handleSignOut}>{t("signOut")}</MenuItem>
+            <MenuItem data-testid="signOutButton" onClick={handleSignOut}>
+              {t("signOut")}
+            </MenuItem>
           </MenuGroup>
         </MenuList>
       </Menu>

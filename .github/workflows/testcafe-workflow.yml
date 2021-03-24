@@ -1,0 +1,28 @@
+name: End-to-End Tests
+on: [push, pull_request]
+env:
+  TEST_ACCOUNT: ${{ secrets.TEST_ACCOUNT }}
+  TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+  ADMIN_PROJECT_ID: ${{ secrets.ADMIN_PROJECT_ID }}
+  ADMIN_PRIVATE_KEY: ${{ secrets.ADMIN_PRIVATE_KEY }}
+  ADMIN_CLIENT_EMAIL: ${{ secrets.ADMIN_CLIENT_EMAIL }}
+
+jobs:
+  test:
+    name: Run TestCafe Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: build
+        uses: actions/setup-node@v2
+      - run: npm install -ci
+      - run: npm run build
+      - name: Run tests PC
+        uses: DevExpress/testcafe-action@latest
+        with:
+          args: "chrome __e2e__/tests/*.ts --test-meta ci=githubAction --app 'npm run start' --app-init-delay 5000"
+      - name: Run tests Mobile
+        uses: DevExpress/testcafe-action@latest
+        with:
+          args: "'chrome:emulation:device=iphone 5/SE' __e2e__/tests/*.ts --test-meta ci=githubAction --app 'npm run start' --app-init-delay 5000"

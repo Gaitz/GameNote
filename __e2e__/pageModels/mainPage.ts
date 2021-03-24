@@ -20,17 +20,19 @@ class Page implements MainPage {
     this.welcomeBack = Selector("[data-testid='welcomeBack']")
     this.appHeaderMenuButton = Selector("[data-testid='appHeaderMenuButton']")
     this.userEmail = Selector("[data-testid='userEmail']")
-    this.signOutButton = Selector("button").withText("Sign Out")
+    this.signOutButton = Selector("[data-testid='signOutButton']")
   }
 
   async signOut() {
-    await t.click(this.appHeaderMenuButton).click(this.signOutButton)
+    await t.click(this.appHeaderMenuButton)
+    await t.click(this.signOutButton)
+    await t.wait(1000)
   }
 
   async assertSignIn(account: string) {
     await t
       .expect(this.userEmail.textContent)
-      .eql(account, "Sign in should match user account")
+      .eql(account, "Sign in should match user account", { timeoutSeconds: 1 })
   }
 }
 
