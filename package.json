@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "prepare": "husky install",
-    "test": ""
+    "test": "npm run unit_test",
+    "unit_test": "jest",
+    "e2e_test": "npm run e2e_pc && npm run e2e_mobile",
+    "e2e_pc": "npx testcafe 'chrome:headless' __e2e__/tests/*.ts --app 'npm run dev' --app-init-delay 5000",
+    "e2e_mobile": "npx testcafe 'chrome:headless:emulation:device=iphone 5/SE' __e2e__/tests/*.ts --app 'npm run dev' --app-init-delay 5000"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.6",
@@ -15,6 +19,7 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@reduxjs/toolkit": "^1.5.0",
+    "dotenv": "^8.2.0",
     "firebase": "^8.2.10",
     "firebase-admin": "^9.5.0",
     "framer-motion": "^3.10.3",
@@ -26,6 +31,9 @@
     "react-redux": "^7.2.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@types/jest": "^26.0.21",
     "@types/node": "^14.14.32",
     "@types/react": "^17.0.3",
     "@types/react-redux": "^7.1.16",
@@ -33,10 +41,14 @@
     "@typescript-eslint/parser": "^4.16.1",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jest-dom": "^3.6.5",
     "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-testing-library": "^3.10.1",
     "husky": "^5.1.3",
+    "jest": "^26.6.3",
     "next-redux-wrapper": "^6.0.2",
     "prettier": "2.2.1",
+    "testcafe": "^1.12.0",
     "typescript": "^4.2.3"
   }
 }

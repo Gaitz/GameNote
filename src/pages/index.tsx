@@ -40,7 +40,7 @@ export const getServerSideProps: GetServerSideProps = wrapper.getServerSideProps
       const appUser = await getAppUserFromToken(tokenFromCookies)
 
       /* eslint-disable-next-line */
-      console.log(`appUser ${appUser}`)
+      console.log(`appUser ${appUser?.email}`)
 
       if (appUser) {
         serverSideStore.dispatch(signIn(appUser))

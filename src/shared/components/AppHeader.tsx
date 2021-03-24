@@ -36,6 +36,7 @@ export function AppHeader() {
       </Center>
       <Menu>
         <MenuButton
+          data-testid="appHeaderMenuButton"
           mr={["0", null, null, "2"]}
           colorScheme="purple"
           as={IconButton}
@@ -48,7 +49,7 @@ export function AppHeader() {
                 name={currentUser?.displayName as string}
                 src={currentUser?.photoURL as string}
               />
-              <Text>{currentUser?.email}</Text>
+              <Text data-testid="userEmail">{currentUser?.email}</Text>
             </VStack>
           </MenuGroup>
           <MenuGroup title={t("feature")}>

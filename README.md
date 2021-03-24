@@ -15,7 +15,7 @@ My note system
 - [x] Prettier
 - [x] I18N (Next.js i18n, next-i18next)
 - [ ] Unit Testing with Jest / React Testing Library / Testing Library jest-dom / Redux mock store
-- [ ] End-to-End Testing with TestCafe
+- [x] End-to-End Testing with TestCafe
 
 ## Todo
 
