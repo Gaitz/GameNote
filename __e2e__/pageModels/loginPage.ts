@@ -19,6 +19,8 @@ interface LoginPage {
   signIn: (email: string, password: string) => Promise<void>
 
   errorContainer: Selector
+
+  assertSignOut: () => Promise<void>
 }
 
 class Page implements LoginPage {
@@ -65,6 +67,12 @@ class Page implements LoginPage {
       .typeText(this.emailInput, email)
       .typeText(this.passwordInput, password)
       .click(this.signInButton)
+  }
+
+  async assertSignOut() {
+    await t
+      .expect(this.welcomeHeader.exists)
+      .ok("sign out should show up login page")
   }
 }
 

@@ -1,13 +1,14 @@
 import loginPage from "./pageModels/loginPage"
 import mainPage from "./pageModels/mainPage"
 import { TEST_ACCOUNT, TEST_PASSWORD, WRONG_PASSWORD } from "./data"
+import { reload } from "./helper"
 
-fixture`Authentication`.page`localhost:3000/`
+fixture`Authentication`.page`localhost:3000/en`
 
 test("Email Login", async (t) => {
   await t.click(loginPage.emailLogin)
   await loginPage.signIn(TEST_ACCOUNT, TEST_PASSWORD)
-  await t.expect(mainPage.welcomeBack.exists).ok()
+  await mainPage.assertSignIn(TEST_ACCOUNT)
 })
 
 test("toggle password visible", async (t) => {
@@ -28,6 +29,23 @@ test("Error Toast", async (t) => {
   await t.expect(loginPage.errorContainer.exists).ok()
 })
 
-// test("sign in and then sign out", async t => {})
+test("sign in and then sign out", async () => {
+  await loginPage.assertSignOut()
 
-// test("sign in, reload and sign out", async t => {})
+  await loginPage.signIn(TEST_ACCOUNT, TEST_PASSWORD)
+  await mainPage.assertSignIn(TEST_ACCOUNT)
+
+  await mainPage.signOut()
+  await loginPage.assertSignOut()
+})
+
+test("sign in, reload and sign out", async () => {
+  await loginPage.signIn(TEST_ACCOUNT, TEST_PASSWORD)
+  await mainPage.assertSignIn(TEST_ACCOUNT)
+
+  await reload()
+  await mainPage.assertSignIn(TEST_ACCOUNT)
+
+  await mainPage.signOut()
+  await loginPage.assertSignOut()
+})
