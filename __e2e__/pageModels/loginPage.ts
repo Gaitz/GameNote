@@ -67,12 +67,13 @@ class Page implements LoginPage {
       .typeText(this.emailInput, email)
       .typeText(this.passwordInput, password)
       .click(this.signInButton)
+    await t.wait(1000)
   }
 
   async assertSignOut() {
     await t
       .expect(this.welcomeHeader.exists)
-      .ok("sign out should show up login page")
+      .ok("after sign out should show up login page")
   }
 }
 
