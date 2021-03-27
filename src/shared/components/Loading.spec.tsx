@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react"
-import { Loading } from "./Loading"
+import { Loading } from "game-note/shared/components"
 
 describe("Hello jest", () => {
   test("Loading component", async () => {
