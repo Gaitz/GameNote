@@ -1,5 +1,5 @@
 name: End-to-End Tests
-on: [push, pull_request]
+on: [pull_request]
 env:
   TEST_ACCOUNT: ${{ secrets.TEST_ACCOUNT }}
   TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
@@ -8,7 +8,7 @@ env:
   ADMIN_CLIENT_EMAIL: ${{ secrets.ADMIN_CLIENT_EMAIL }}
 
 jobs:
-  test:
+  e2e-test:
     name: Run TestCafe Tests
     runs-on: ubuntu-latest
     steps:
@@ -26,3 +26,12 @@ jobs:
         uses: DevExpress/testcafe-action@latest
         with:
           args: "'chrome:emulation:device=iphone 5/SE' __e2e__/tests/*.ts --test-meta ci=githubAction --app 'npm run start' --app-init-delay 5000"
+  unit-test:
+    name: Run Jest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: npm install -ci
+      - name: Run unit tests
+        run: npm test
