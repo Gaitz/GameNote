@@ -1,2 +1,2 @@
-export * from "./Loading"
-export * from "./AppHeader"
+export { default as Loading } from "./Loading"
+export { default as AppHeader } from "./AppHeader"

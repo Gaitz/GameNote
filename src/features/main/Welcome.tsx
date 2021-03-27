@@ -1,5 +1,5 @@
 import { useAppSelector } from "game-note/shared/store"
-import { AppHeader } from "game-note/shared/components/AppHeader"
+import { AppHeader } from "game-note/shared/components"
 import { Flex, Text, Fade } from "@chakra-ui/react"
 import { useTranslation } from "next-i18next"
 

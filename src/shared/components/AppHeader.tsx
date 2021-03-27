@@ -18,7 +18,7 @@ import { useFirebaseAuthLogout } from "game-note/features/authentication"
 import { useAppSelector } from "game-note/shared/store"
 import { useTranslation } from "next-i18next"
 
-export function AppHeader() {
+export default function AppHeader() {
   const { t } = useTranslation("common")
   const { handleSignOut } = useFirebaseAuthLogout()
   const currentUser = useAppSelector((state) => state.authentication.user)
