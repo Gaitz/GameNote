@@ -16,6 +16,7 @@ My note system
 - [x] I18N (Next.js i18n, next-i18next)
 - [ ] Unit Testing with Jest / React Testing Library / Testing Library jest-dom / Redux mock store
 - [x] End-to-End Testing with TestCafe
+- [x] CI (GitHub actions), CD (Vercel)
 
 ## Todo
 

@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppHeader component Sign out 1`] = `
+<DocumentFragment>
+  <div
+    class="css-yeeskf"
+  >
+    <div
+      class="css-1tv7vc9"
+    >
+      <h2
+        class="chakra-heading css-eedfcw"
+      >
+        Game Note
+      </h2>
+    </div>
+    <button
+      aria-controls="menu-list-14"
+      aria-expanded="false"
+      aria-haspopup="menu"
+      class="chakra-button chakra-menu__menu-button css-137iq8p"
+      data-testid="appHeaderMenuButton"
+      id="menu-button-14"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+    <div
+      class="css-r6z5ec"
+      data-popper-escaped=""
+      data-popper-placement="bottom-start"
+      data-popper-reference-hidden=""
+      style="visibility: hidden; margin: 0px; --popper-transform-origin: top left; position: absolute; left: 0px; top: 0px; transform: translate(0px, 8px);"
+    >
+      <div
+        aria-orientation="vertical"
+        class="chakra-menu__menu-list css-5kh5q9"
+        id="menu-list-14"
+        role="menu"
+        style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: visible; transform: scale(0.8) translateZ(0);"
+        tabindex="-1"
+      >
+        <div
+          class="chakra-menu__group"
+          role="group"
+        >
+          <p
+            class="chakra-menu__group__title css-1a50x1j"
+          >
+            profile
+          </p>
+          <div
+            class="chakra-stack css-4x6kqm"
+          >
+            <span
+              class="chakra-avatar css-nxs594"
+            >
+              <svg
+                aria-label=" avatar"
+                class="chakra-avatar__svg css-16ite8i"
+                role="img"
+                viewBox="0 0 128 128"
+              >
+                <path
+                  d="M103,102.1388 C93.094,111.92 79.3504,118 64.1638,118 C48.8056,118 34.9294,111.768 25,101.7892 L25,95.2 C25,86.8096 31.981,80 40.6,80 L87.4,80 C96.019,80 103,86.8096 103,95.2 L103,102.1388 Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M63.9961647,24 C51.2938136,24 41,34.2938136 41,46.9961647 C41,59.7061864 51.2938136,70 63.9961647,70 C76.6985159,70 87,59.7061864 87,46.9961647 C87,34.2938136 76.6985159,24 63.9961647,24"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p
+              class="chakra-text css-0"
+              data-testid="userEmail"
+            />
+          </div>
+        </div>
+        <div
+          class="chakra-menu__group"
+          role="group"
+        >
+          <p
+            class="chakra-menu__group__title css-1a50x1j"
+          >
+            feature
+          </p>
+          <button
+            class="chakra-menu__menuitem css-1hax5ds"
+            id="menuitem-15"
+            role="menuitem"
+            tabindex="-1"
+            type="button"
+          >
+            workoutFeature
+          </button>
+        </div>
+        <div
+          class="chakra-menu__group"
+          role="group"
+        >
+          <p
+            class="chakra-menu__group__title css-1a50x1j"
+          >
+            system
+          </p>
+          <button
+            class="chakra-menu__menuitem css-1hax5ds"
+            data-testid="signOutButton"
+            id="menuitem-16"
+            role="menuitem"
+            tabindex="-1"
+            type="button"
+          >
+            signOut
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`AppHeader component Snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-yeeskf"
+  >
+    <div
+      class="css-1tv7vc9"
+    >
+      <h2
+        class="chakra-heading css-eedfcw"
+      >
+        Game Note
+      </h2>
+    </div>
+    <button
+      aria-controls="menu-list-4"
+      aria-expanded="false"
+      aria-haspopup="menu"
+      class="chakra-button chakra-menu__menu-button css-137iq8p"
+      data-testid="appHeaderMenuButton"
+      id="menu-button-4"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+    <div
+      class="css-r6z5ec"
+      data-popper-escaped=""
+      data-popper-placement="bottom-start"
+      data-popper-reference-hidden=""
+      style="visibility: hidden; margin: 0px; --popper-transform-origin: top left; position: absolute; left: 0px; top: 0px; transform: translate(0px, 8px);"
+    >
+      <div
+        aria-orientation="vertical"
+        class="chakra-menu__menu-list css-5kh5q9"
+        id="menu-list-4"
+        role="menu"
+        style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+        tabindex="-1"
+      >
+        <div
+          class="chakra-menu__group"
+          role="group"
+        >
+          <p
+            class="chakra-menu__group__title css-1a50x1j"
+          >
+            profile
+          </p>
+          <div
+            class="chakra-stack css-4x6kqm"
+          >
+            <span
+              class="chakra-avatar css-nxs594"
+            >
+              <svg
+                aria-label=" avatar"
+                class="chakra-avatar__svg css-16ite8i"
+                role="img"
+                viewBox="0 0 128 128"
+              >
+                <path
+                  d="M103,102.1388 C93.094,111.92 79.3504,118 64.1638,118 C48.8056,118 34.9294,111.768 25,101.7892 L25,95.2 C25,86.8096 31.981,80 40.6,80 L87.4,80 C96.019,80 103,86.8096 103,95.2 L103,102.1388 Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M63.9961647,24 C51.2938136,24 41,34.2938136 41,46.9961647 C41,59.7061864 51.2938136,70 63.9961647,70 C76.6985159,70 87,59.7061864 87,46.9961647 C87,34.2938136 76.6985159,24 63.9961647,24"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p
+              class="chakra-text css-0"
+              data-testid="userEmail"
+            />
+          </div>
+        </div>
+        <div
+          class="chakra-menu__group"
+          role="group"
+        >
+          <p
+            class="chakra-menu__group__title css-1a50x1j"
+          >
+            feature
+          </p>
+          <button
+            class="chakra-menu__menuitem css-1hax5ds"
+            id="menuitem-1"
+            role="menuitem"
+            tabindex="-1"
+            type="button"
+          >
+            workoutFeature
+          </button>
+        </div>
+        <div
+          class="chakra-menu__group"
+          role="group"
+        >
+          <p
+            class="chakra-menu__group__title css-1a50x1j"
+          >
+            system
+          </p>
+          <button
+            class="chakra-menu__menuitem css-1hax5ds"
+            data-testid="signOutButton"
+            id="menuitem-2"
+            role="menuitem"
+            tabindex="-1"
+            type="button"
+          >
+            signOut
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
