@@ -8,12 +8,6 @@ import React, { FC } from "react"
 import type { ReactElement } from "react"
 import type { RenderOptions } from "@testing-library/react"
 
-jest.mock("react-i18next", () => ({
-  useTranslation: () => ({
-    t: (key: string): string => key
-  })
-}))
-
 /* eslint-disable react/prop-types */
 const AllTheProviders: FC = ({ children }) => {
   return (
@@ -29,5 +23,6 @@ const customRender = (
 ) => render(ui, { wrapper: AllTheProviders, ...options })
 
 export * from "@testing-library/react"
+export { default as userEvent } from "@testing-library/user-event"
 
 export { customRender as render }

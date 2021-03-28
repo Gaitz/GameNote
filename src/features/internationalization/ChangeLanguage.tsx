@@ -15,7 +15,7 @@ const supportedLocalesName: supportedLocalesNameMapping = {
 // [reference](https://nextjs.org/docs/advanced-features/i18n-routing#leveraging-the-next_locale-cookie)
 const NEXT_LOCALE_COOKIE = "NEXT_LOCALE"
 
-export function ChangeLanguage() {
+export default function ChangeLanguage() {
   const { t } = useTranslation("login")
   const router = useRouter()
 
