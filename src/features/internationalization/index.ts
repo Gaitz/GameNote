@@ -1,1 +1,1 @@
-export * from "./ChangeLanguage"
+export { default as ChangeLanguage } from "./ChangeLanguage"

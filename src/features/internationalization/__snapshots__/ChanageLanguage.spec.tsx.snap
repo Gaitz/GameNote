@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Internationalization Snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="chakra-select__wrapper css-dsdwpa"
+  >
+    <select
+      class="chakra-select css-1xl1c6r"
+      data-testid="languageSelector"
+    >
+      <option
+        value=""
+      >
+        languageSwitch
+      </option>
+      <option
+        value="en"
+      >
+        English
+      </option>
+      <option
+        value="zh-TW"
+      >
+        繁體中文
+      </option>
+    </select>
+    <div
+      class="chakra-select__icon-wrapper css-zj2dqk"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-select__icon"
+        focusable="false"
+        role="presentation"
+        style="width: 1em; height: 1em; color: currentColor;"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
