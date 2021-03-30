@@ -1,3 +1,5 @@
+![CI action badge](https://github.com/Gaitz/GameNote/actions/workflows/test-workflow.yml/badge.svg)
+
 # GameNote
 
 My note system
