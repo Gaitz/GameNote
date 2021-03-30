@@ -11,7 +11,7 @@ import { useState } from "react"
 import { useTranslation } from "next-i18next"
 import { useFirebaseAuthEmailLogin } from "game-note/features/authentication"
 
-export function EmailLogin() {
+export default function EmailLogin() {
   const { t } = useTranslation("login")
 
   const EMAIL_FORM_ID = "EmailLogin"
@@ -47,18 +47,22 @@ export function EmailLogin() {
             type="email"
             isRequired
             colorScheme="twitter"
+            data-testid="emailInput"
           />
         </FormControl>
       </GridItem>
       <GridItem colSpan={2}>
         <FormControl isRequired gridColumn={2}>
-          <FormLabel>{t("passwordInput")}</FormLabel>
+          <FormLabel htmlFor={PASSWORD_INPUT_NAME}>
+            {t("passwordInput")}
+          </FormLabel>
           <Input
             autoComplete="current-password"
             name={PASSWORD_INPUT_NAME}
             type={passwordVisible ? "text" : "password"}
             isRequired
             colorScheme="twitter"
+            data-testid="passwordInput"
           />
           <InputRightElement width="4.5rem">
             <Button

@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailLogin component Snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="css-vgka4c"
+    id="EmailLogin"
+  >
+    <div
+      class="css-tuh9u2"
+    >
+      <div
+        class="chakra-form-control css-1kxonj9"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-10m1y3x"
+          for="field-1"
+          id="field-1-label"
+        >
+          emailInput
+          <span
+            aria-hidden="true"
+            class="chakra-form__required-indicator css-1tknnrp"
+            role="presentation"
+          >
+            *
+          </span>
+        </label>
+        <input
+          aria-required="true"
+          autocomplete="username"
+          class="chakra-input css-1b73kmm"
+          data-testid="emailInput"
+          id="field-1"
+          name="Email"
+          required=""
+          type="email"
+        />
+      </div>
+    </div>
+    <div
+      class="css-tuh9u2"
+    >
+      <div
+        class="chakra-form-control css-1goklfu"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-10m1y3x"
+          for="Password"
+          id="field-2-label"
+        >
+          passwordInput
+          <span
+            aria-hidden="true"
+            class="chakra-form__required-indicator css-1tknnrp"
+            role="presentation"
+          >
+            *
+          </span>
+        </label>
+        <input
+          aria-required="true"
+          autocomplete="current-password"
+          class="chakra-input css-1b73kmm"
+          data-testid="passwordInput"
+          id="field-2"
+          name="Password"
+          required=""
+          type="password"
+        />
+        <div
+          class="chakra-input__right-element css-1tbxs5h"
+        >
+          <button
+            class="chakra-button css-10z31di"
+            data-testid="toggleVisible"
+            type="button"
+          >
+            show
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-xi606m"
+    >
+      <button
+        class="chakra-button css-16trzbp"
+        data-testid="signIn"
+        type="submit"
+      >
+        signIn
+      </button>
+    </div>
+    <div
+      class="css-xi606m"
+    >
+      <button
+        class="chakra-button css-16trzbp"
+        data-testid="signUp"
+        type="submit"
+      >
+        signUp
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;
