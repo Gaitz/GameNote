@@ -26,6 +26,18 @@ describe("AppHeader component", () => {
       })
     )
 
+    expect(store.getState()).toMatchInlineSnapshot(`
+      Object {
+        "authentication": Object {
+          "user": Object {
+            "displayName": "test user name",
+            "email": "test@test.test",
+            "photoURL": "https://avatars.githubusercontent.com/u/5541565?v=4",
+          },
+        },
+      }
+    `)
+
     const menuButton = getByTestId("appHeaderMenuButton")
     expect(menuButton).toBeEnabled()
 
