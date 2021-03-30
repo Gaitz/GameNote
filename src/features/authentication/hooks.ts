@@ -8,25 +8,12 @@ import {
 import { useToast } from "@chakra-ui/react"
 import { useTranslation } from "next-i18next"
 
-type UseFirebaseAuthLogin = () => {
-  isLoading: boolean
-  handleGitHubSignIn: () => void
-}
 type EMAIL_LOGIN_FORM = {
   EMAIL_FORM_ID: string
   EMAIL_INPUT_NAME: string
   PASSWORD_INPUT_NAME: string
 }
-type UseFirebaseAuthEmailLogin = ({
-  EMAIL_FORM_ID,
-  EMAIL_INPUT_NAME,
-  PASSWORD_INPUT_NAME
-}: EMAIL_LOGIN_FORM) => {
-  handleEmailSignIn: () => void
-  handleEmailSignUp: () => void
-  isSubmitting: boolean
-}
-type UseFirebaseAuthLogout = () => { handleSignOut: () => void }
+
 type UseToastErrorHandler = () => {
   errorHandlerWithToast: (error: firebase.FirebaseError) => void
 }
@@ -52,6 +39,11 @@ export const useToastErrorHandler: UseToastErrorHandler = () => {
       })
     }
   }
+}
+
+type UseFirebaseAuthLogin = () => {
+  isLoading: boolean
+  handleGitHubSignIn: () => void
 }
 
 export const useFirebaseAuthLogin: UseFirebaseAuthLogin = () => {
@@ -86,6 +78,16 @@ export const useFirebaseAuthLogin: UseFirebaseAuthLogin = () => {
     isLoading,
     handleGitHubSignIn
   }
+}
+
+type UseFirebaseAuthEmailLogin = ({
+  EMAIL_FORM_ID,
+  EMAIL_INPUT_NAME,
+  PASSWORD_INPUT_NAME
+}: EMAIL_LOGIN_FORM) => {
+  handleEmailSignIn: () => void
+  handleEmailSignUp: () => void
+  isSubmitting: boolean
 }
 
 export const useFirebaseAuthEmailLogin: UseFirebaseAuthEmailLogin = ({
@@ -147,6 +149,8 @@ export const useFirebaseAuthEmailLogin: UseFirebaseAuthEmailLogin = ({
     isSubmitting
   }
 }
+
+type UseFirebaseAuthLogout = () => { handleSignOut: () => void }
 
 export const useFirebaseAuthLogout: UseFirebaseAuthLogout = () => {
   const dispatch = useAppDispatch()
