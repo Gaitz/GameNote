@@ -9,7 +9,7 @@
     "prepare": "husky install",
     "test": "npm run unit_test",
     "unit_test": "jest",
-    "e2e_test": "npm run build && npm run e2e_pc && npm run e2e_mobile",
+    "e2e_test": "#npm run build && npm run e2e_pc && npm run e2e_mobile",
     "e2e_pc": "npx testcafe 'chrome:headless' __e2e__/tests/*.ts --app 'npm run start' --app-init-delay 5000",
     "e2e_mobile": "npx testcafe 'chrome:headless:emulation:device=iphone 5/SE' __e2e__/tests/*.ts --app 'npm run start' --app-init-delay 5000"
   },
