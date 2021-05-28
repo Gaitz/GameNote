@@ -32,7 +32,7 @@ class Page implements MainPage {
   async assertSignIn(account: string) {
     await t
       .expect(this.userEmail.textContent)
-      .eql(account, "Sign in should match user account", { timeoutSeconds: 1 })
+      .eql(account, "Sign in should match user account")
   }
 }
 

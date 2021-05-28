@@ -3,13 +3,13 @@
 exports[`Login component Snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="css-151wynj"
+    class="css-1bysig7"
   >
     <div
       class="chakra-select__wrapper css-dsdwpa"
     >
       <select
-        class="chakra-select css-1xl1c6r"
+        class="chakra-select css-hsj94m"
         data-testid="languageSelector"
       >
         <option
@@ -61,16 +61,16 @@ exports[`Login component Snapshot 1`] = `
       Game Note
     </h1>
     <div
-      class="css-w736gn"
+      class="css-3rof4l"
     >
       <button
-        class="chakra-button css-h2xeff"
+        class="chakra-button css-f9ilmm"
         type="button"
       >
         GitHub login
       </button>
       <button
-        class="chakra-button css-h2xeff"
+        class="chakra-button css-f9ilmm"
         type="button"
       >
         Email login

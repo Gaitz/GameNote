@@ -6,7 +6,7 @@ exports[`Internationalization Snapshot 1`] = `
     class="chakra-select__wrapper css-dsdwpa"
   >
     <select
-      class="chakra-select css-1xl1c6r"
+      class="chakra-select css-hsj94m"
       data-testid="languageSelector"
     >
       <option

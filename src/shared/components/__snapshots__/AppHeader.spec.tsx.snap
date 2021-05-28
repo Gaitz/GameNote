@@ -15,12 +15,12 @@ exports[`AppHeader component Sign out 2`] = `
       </h2>
     </div>
     <button
-      aria-controls="menu-list-14"
+      aria-controls="menu-list-10"
       aria-expanded="false"
       aria-haspopup="menu"
-      class="chakra-button chakra-menu__menu-button css-137iq8p"
+      class="chakra-button chakra-menu__menu-button css-189h3fl"
       data-testid="appHeaderMenuButton"
-      id="menu-button-14"
+      id="menu-button-10"
       type="button"
     >
       <svg
@@ -40,12 +40,12 @@ exports[`AppHeader component Sign out 2`] = `
       data-popper-escaped=""
       data-popper-placement="bottom-start"
       data-popper-reference-hidden=""
-      style="visibility: hidden; margin: 0px; --popper-transform-origin: top left; position: absolute; left: 0px; top: 0px; transform: translate(0px, 8px);"
+      style="visibility: hidden; position: absolute; min-width: max-content; left: 0px; top: 0px; margin: 0px; transform: translate(0px, 8px); --popper-transform-origin: top left;"
     >
       <div
         aria-orientation="vertical"
-        class="chakra-menu__menu-list css-5kh5q9"
-        id="menu-list-14"
+        class="chakra-menu__menu-list css-zenlc5"
+        id="menu-list-10"
         role="menu"
         style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: visible; transform: scale(0.8) translateZ(0);"
         tabindex="-1"
@@ -60,7 +60,7 @@ exports[`AppHeader component Sign out 2`] = `
             profile
           </p>
           <div
-            class="chakra-stack css-4x6kqm"
+            class="chakra-stack css-bn6sxo"
           >
             <span
               class="chakra-avatar css-nxs594"
@@ -97,8 +97,9 @@ exports[`AppHeader component Sign out 2`] = `
             feature
           </p>
           <button
-            class="chakra-menu__menuitem css-1hax5ds"
-            id="menuitem-15"
+            class="chakra-menu__menuitem css-1efx0r5"
+            data-index="0"
+            id="menu-list-10-menuitem-11"
             role="menuitem"
             tabindex="-1"
             type="button"
@@ -116,9 +117,10 @@ exports[`AppHeader component Sign out 2`] = `
             system
           </p>
           <button
-            class="chakra-menu__menuitem css-1hax5ds"
+            class="chakra-menu__menuitem css-1efx0r5"
+            data-index="1"
             data-testid="signOutButton"
-            id="menuitem-16"
+            id="menu-list-10-menuitem-12"
             role="menuitem"
             tabindex="-1"
             type="button"
@@ -150,7 +152,7 @@ exports[`AppHeader component Snapshot 1`] = `
       aria-controls="menu-list-4"
       aria-expanded="false"
       aria-haspopup="menu"
-      class="chakra-button chakra-menu__menu-button css-137iq8p"
+      class="chakra-button chakra-menu__menu-button css-189h3fl"
       data-testid="appHeaderMenuButton"
       id="menu-button-4"
       type="button"
@@ -169,14 +171,11 @@ exports[`AppHeader component Snapshot 1`] = `
     </button>
     <div
       class="css-r6z5ec"
-      data-popper-escaped=""
-      data-popper-placement="bottom-start"
-      data-popper-reference-hidden=""
-      style="visibility: hidden; margin: 0px; --popper-transform-origin: top left; position: absolute; left: 0px; top: 0px; transform: translate(0px, 8px);"
+      style="visibility: hidden; position: absolute; min-width: max-content;"
     >
       <div
         aria-orientation="vertical"
-        class="chakra-menu__menu-list css-5kh5q9"
+        class="chakra-menu__menu-list css-zenlc5"
         id="menu-list-4"
         role="menu"
         style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
@@ -192,7 +191,7 @@ exports[`AppHeader component Snapshot 1`] = `
             profile
           </p>
           <div
-            class="chakra-stack css-4x6kqm"
+            class="chakra-stack css-bn6sxo"
           >
             <span
               class="chakra-avatar css-nxs594"
@@ -229,8 +228,9 @@ exports[`AppHeader component Snapshot 1`] = `
             feature
           </p>
           <button
-            class="chakra-menu__menuitem css-1hax5ds"
-            id="menuitem-1"
+            class="chakra-menu__menuitem css-1efx0r5"
+            data-index="0"
+            id="menu-list-4-menuitem-1"
             role="menuitem"
             tabindex="-1"
             type="button"
@@ -248,9 +248,10 @@ exports[`AppHeader component Snapshot 1`] = `
             system
           </p>
           <button
-            class="chakra-menu__menuitem css-1hax5ds"
+            class="chakra-menu__menuitem css-1efx0r5"
+            data-index="1"
             data-testid="signOutButton"
-            id="menuitem-2"
+            id="menu-list-4-menuitem-2"
             role="menuitem"
             tabindex="-1"
             type="button"

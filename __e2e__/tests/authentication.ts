@@ -45,7 +45,7 @@ test("sign in, reload and sign out", async (t) => {
   await mainPage.assertSignIn(TEST_ACCOUNT)
 
   await reload()
-  await t.wait(1000)
+  await t.wait(3000).setTestSpeed(0.05)
   await mainPage.assertSignIn(TEST_ACCOUNT)
 
   await mainPage.signOut()

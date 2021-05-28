@@ -21,7 +21,7 @@ exports[`EmailLogin component Snapshot 1`] = `
           emailInput
           <span
             aria-hidden="true"
-            class="chakra-form__required-indicator css-1tknnrp"
+            class="chakra-form__required-indicator css-1ssjhh"
             role="presentation"
           >
             *
@@ -30,7 +30,7 @@ exports[`EmailLogin component Snapshot 1`] = `
         <input
           aria-required="true"
           autocomplete="username"
-          class="chakra-input css-1b73kmm"
+          class="chakra-input css-ujci2j"
           data-testid="emailInput"
           id="field-1"
           name="Email"
@@ -54,7 +54,7 @@ exports[`EmailLogin component Snapshot 1`] = `
           passwordInput
           <span
             aria-hidden="true"
-            class="chakra-form__required-indicator css-1tknnrp"
+            class="chakra-form__required-indicator css-1ssjhh"
             role="presentation"
           >
             *
@@ -63,7 +63,7 @@ exports[`EmailLogin component Snapshot 1`] = `
         <input
           aria-required="true"
           autocomplete="current-password"
-          class="chakra-input css-1b73kmm"
+          class="chakra-input css-ujci2j"
           data-testid="passwordInput"
           id="field-2"
           name="Password"
@@ -71,10 +71,10 @@ exports[`EmailLogin component Snapshot 1`] = `
           type="password"
         />
         <div
-          class="chakra-input__right-element css-1tbxs5h"
+          class="chakra-input__right-element css-1x84ua"
         >
           <button
-            class="chakra-button css-10z31di"
+            class="chakra-button css-i0vyni"
             data-testid="toggleVisible"
             type="button"
           >
@@ -87,7 +87,7 @@ exports[`EmailLogin component Snapshot 1`] = `
       class="css-xi606m"
     >
       <button
-        class="chakra-button css-16trzbp"
+        class="chakra-button css-19tel07"
         data-testid="signIn"
         type="submit"
       >
@@ -98,7 +98,7 @@ exports[`EmailLogin component Snapshot 1`] = `
       class="css-xi606m"
     >
       <button
-        class="chakra-button css-16trzbp"
+        class="chakra-button css-19tel07"
         data-testid="signUp"
         type="submit"
       >
