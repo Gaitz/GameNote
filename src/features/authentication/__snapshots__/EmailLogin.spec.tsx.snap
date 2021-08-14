@@ -14,7 +14,7 @@ exports[`EmailLogin component Snapshot 1`] = `
         role="group"
       >
         <label
-          class="chakra-form__label css-10m1y3x"
+          class="chakra-form__label css-2gx1h6"
           for="field-1"
           id="field-1-label"
         >
@@ -30,7 +30,7 @@ exports[`EmailLogin component Snapshot 1`] = `
         <input
           aria-required="true"
           autocomplete="username"
-          class="chakra-input css-ujci2j"
+          class="chakra-input css-1c6j008"
           data-testid="emailInput"
           id="field-1"
           name="Email"
@@ -47,7 +47,7 @@ exports[`EmailLogin component Snapshot 1`] = `
         role="group"
       >
         <label
-          class="chakra-form__label css-10m1y3x"
+          class="chakra-form__label css-2gx1h6"
           for="Password"
           id="field-2-label"
         >
@@ -63,7 +63,7 @@ exports[`EmailLogin component Snapshot 1`] = `
         <input
           aria-required="true"
           autocomplete="current-password"
-          class="chakra-input css-ujci2j"
+          class="chakra-input css-1c6j008"
           data-testid="passwordInput"
           id="field-2"
           name="Password"
@@ -74,7 +74,7 @@ exports[`EmailLogin component Snapshot 1`] = `
           class="chakra-input__right-element css-1x84ua"
         >
           <button
-            class="chakra-button css-i0vyni"
+            class="chakra-button css-exc9nb"
             data-testid="toggleVisible"
             type="button"
           >
@@ -87,7 +87,7 @@ exports[`EmailLogin component Snapshot 1`] = `
       class="css-xi606m"
     >
       <button
-        class="chakra-button css-19tel07"
+        class="chakra-button css-qn08ru"
         data-testid="signIn"
         type="submit"
       >
@@ -98,7 +98,7 @@ exports[`EmailLogin component Snapshot 1`] = `
       class="css-xi606m"
     >
       <button
-        class="chakra-button css-19tel07"
+        class="chakra-button css-qn08ru"
         data-testid="signUp"
         type="submit"
       >

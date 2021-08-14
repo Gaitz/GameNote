@@ -9,7 +9,7 @@ exports[`Login component Snapshot 1`] = `
       class="chakra-select__wrapper css-dsdwpa"
     >
       <select
-        class="chakra-select css-hsj94m"
+        class="chakra-select css-173b75c"
         data-testid="languageSelector"
       >
         <option
@@ -64,13 +64,13 @@ exports[`Login component Snapshot 1`] = `
       class="css-3rof4l"
     >
       <button
-        class="chakra-button css-f9ilmm"
+        class="chakra-button css-1i5pcfv"
         type="button"
       >
         GitHub login
       </button>
       <button
-        class="chakra-button css-f9ilmm"
+        class="chakra-button css-1i5pcfv"
         type="button"
       >
         Email login
